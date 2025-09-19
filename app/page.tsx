@@ -145,7 +145,7 @@ type IconComponent = React.ComponentType<{ className?: string }>
 
 function SectionHeading(
   { title, subtitle, icon: Icon }: { title: string; subtitle?: string; icon?: IconComponent }
-): JSX.Element {
+) {
   return (
     <div className="flex items-center gap-3 mb-4">
       <div className="p-2 rounded-xl bg-muted">
