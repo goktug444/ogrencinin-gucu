@@ -141,7 +141,7 @@ const FIRMA_VERI = [
 const SEHIRLER = ["Tümü", ...Array.from(new Set(FIRMA_VERI.map((f) => f.sehir)))];
 const KATEGORILER = ["Tümü", ...Array.from(new Set(FIRMA_VERI.flatMap((f) => f.kategori)))];
 
-function SectionHeading({ title, subtitle, icon: Icon }) {
+function SectionHeading({ title, subtitle, icon: Icon }: { title: string; subtitle?: string; icon?: React.ComponentType<any> }) {
   return (
     <div className="flex items-center gap-3 mb-4">
       <div className="p-2 rounded-xl bg-muted">
