@@ -1,9 +1,8 @@
 'use client';
 
-
-import React, { useMemo, useState } from "react";
-import { motion } from "framer-motion";
+import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { MapPin, Search, X, Building2, Globe, ImageIcon, UsersRound } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -11,137 +10,11 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-// ————————————————————————————————————————————
-// TEK DOSYALIK DEMO UYGULAMA
-// ● Hesap açma yok. Haber sitesi gibi akış + firma rehberi.
-// ● Ana ekranda: kısa tanıtım, sitenin amacı, firma arama/filtreleme.
-// ● Firmalarda: konum bilgisi, görseller, kategoriler, harita linki.
-// ● "Akıcı" görünüm için logo-marquee ve yumuşak animasyonlar.
-// ● Her şey statik JSON ile çalışır; backend gerekmez.
-// ————————————————————————————————————————————
+import type { Firma } from "@/lib/data";
+import { DEFAULT_VERI } from "@/lib/data";
 
-// ÖRNEK VERİ — Gerçek projede bunu bir API'den çekebilirsiniz
-const FIRMA_VERI = [
-  {
-    id: "k1",
-    ad: "Umuttepe Study Café",
-    sehir: "Kocaeli",
-    adres: "Umuttepe Kampüs Yolu, İzmit / Kocaeli",
-    konumUrl: "https://www.google.com/maps/search/?api=1&query=Umuttepe+Study+Cafe+Kocaeli",
-    kategori: ["Kafe", "Çalışma Alanı"],
-    aciklama: "Kocaeli Üniversitesi'ne yürüme mesafesinde, sakin ve hızlı internetli çalışma alanı.",
-    gorseller: [
-      "https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1459755486867-b55449bb39ff?auto=format&fit=crop&w=1400&q=80"
-    ],
-    logo: "",
-  },
-  {
-    id: "k2",
-    ad: "İzmit Marina Kafe",
-    sehir: "Kocaeli",
-    adres: "Marina Cad., İzmit Sahil, Kocaeli",
-    konumUrl: "https://www.google.com/maps/search/?api=1&query=İzmit+Marina+Kafe+Kocaeli",
-    kategori: ["Kafe", "Restoran"],
-    aciklama: "Deniz kenarında geniş masalar ve ferah ortam. Grup çalışmaları için uygun.",
-    gorseller: [
-      "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1400&q=80"
-    ],
-    logo: "",
-  },
-  {
-    id: "k3",
-    ad: "Sekapark Çim Alanı",
-    sehir: "Kocaeli",
-    adres: "Sekapark, Kültürpark İç Yolu, İzmit / Kocaeli",
-    konumUrl: "https://www.google.com/maps/search/?api=1&query=Sekapark+Kocaeli",
-    kategori: ["Çalışma Alanı"],
-    aciklama: "Açık havada ders çalışmak, etkinlik yapmak ve yürüyüş için ideal alan.",
-    gorseller: [
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1400&q=80"
-    ],
-    logo: "",
-  },
-  {
-    id: "k4",
-    ad: "Symbol AVM – Tech Service",
-    sehir: "Kocaeli",
-    adres: "Symbol AVM, Körfez Mah., Kocaeli",
-    konumUrl: "https://www.google.com/maps/search/?api=1&query=Symbol+AVM+Kocaeli+Teknik+Servis",
-    kategori: ["Teknik Servis", "Elektronik"],
-    aciklama: "Laptop ve telefon onarımı, hızlı teslimat. Öğrenci bütçesine uygun seçenekler.",
-    gorseller: [
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1457305237443-44c3d5a30b89?auto=format&fit=crop&w=1400&q=80"
-    ],
-    logo: "",
-  },
-  {
-    id: "k5",
-    ad: "NCity – Book Corner",
-    sehir: "Kocaeli",
-    adres: "NCity AVM, Yahyakaptan, İzmit / Kocaeli",
-    konumUrl: "https://www.google.com/maps/search/?api=1&query=NCity+Kitap+Kocaeli",
-    kategori: ["Kitabevi", "Kırtasiye"],
-    aciklama: "Sınav kaynakları, kırtasiye ürünleri ve hızlı fotokopi hizmeti.",
-    gorseller: [
-      "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1400&q=80"
-    ],
-    logo: "",
-  },
-  {
-    id: "k6",
-    ad: "İzmit Spor Merkezi",
-    sehir: "Kocaeli",
-    adres: "Sanayi Mah., Spor Cad., İzmit / Kocaeli",
-    konumUrl: "https://www.google.com/maps/search/?api=1&query=İzmit+Spor+Merkezi+Kocaeli",
-    kategori: ["Spor Salonu"],
-    aciklama: "Geniş ağırlık alanı, duş ve dolap. Esnek üyelik seçenekleri.",
-    gorseller: [
-      "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&fit=crop&w=1400&q=80"
-    ],
-    logo: "",
-  },
-  {
-    id: "k7",
-    ad: "Yahyakaptan Vegan Durağı",
-    sehir: "Kocaeli",
-    adres: "Yahyakaptan Mah., İzmit / Kocaeli",
-    konumUrl: "https://www.google.com/maps/search/?api=1&query=Yahyakaptan+Vegan+Kocaeli",
-    kategori: ["Restoran", "Vegan"],
-    aciklama: "Günlük taze vegan menü, paket servis ve doyurucu tabaklar.",
-    gorseller: [
-      "https://images.unsplash.com/photo-1506354666786-959d6d497f1a?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1400&q=80"
-    ],
-    logo: "",
-  },
-  {
-    id: "k8",
-    ad: "Körfez Sahil Çalışma Köşesi",
-    sehir: "Kocaeli",
-    adres: "Körfez Sahil Bandı, Kocaeli",
-    konumUrl: "https://www.google.com/maps/search/?api=1&query=Körfez+Sahil+Kocaeli",
-    kategori: ["Çalışma Alanı"],
-    aciklama: "Gün batımında sakin ve serin. Açık havada ders çalışmak için güzel bir nokta.",
-    gorseller: [
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1400&q=80"
-    ],
-    logo: "",
-  },
-];
-
-
-const SEHIRLER = ["Tümü", ...Array.from(new Set(FIRMA_VERI.map((f) => f.sehir)))];
-const KATEGORILER = ["Tümü", ...Array.from(new Set(FIRMA_VERI.flatMap((f) => f.kategori)))];
-
-type IconComponent = React.ComponentType<{ className?: string }>
+type IconComponent = React.ComponentType<{ className?: string }>;
+type SetState<T> = React.Dispatch<React.SetStateAction<T>>;
 
 function SectionHeading(
   { title, subtitle, icon: Icon }: { title: string; subtitle?: string; icon?: IconComponent }
@@ -159,7 +32,7 @@ function SectionHeading(
   );
 }
 
-function FirmaKarti({ firma, onOpen }) {
+function FirmaKarti({ firma, onOpen }: { firma: Firma; onOpen: (f: Firma) => void }) {
   return (
     <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer" onClick={() => onOpen(firma)}>
       <div className="aspect-video relative bg-muted">
@@ -217,7 +90,15 @@ function FirmaKarti({ firma, onOpen }) {
   );
 }
 
-function FirmaDetayModal({ acik, firma, onClose }) {
+function FirmaDetayModal({
+  acik,
+  firma,
+  onClose,
+}: {
+  acik: boolean;
+  firma: Firma | null;
+  onClose: () => void;
+}) {
   if (!acik || !firma) return null;
   return (
     <div className="fixed inset-0 z-50 grid place-items-center p-4 bg-black/40 backdrop-blur-sm" onClick={onClose}>
@@ -289,8 +170,8 @@ function FirmaDetayModal({ acik, firma, onClose }) {
   );
 }
 
-function Marquee({ items = [] }) {
-  const reel = [...items, ...items, ...items];
+function Marquee({ items = [] as string[] }) {
+  const reel = React.useMemo(() => [...items, ...items, ...items], [items]);
   return (
     <div className="relative overflow-hidden">
       <div className="marquee-track flex gap-8 will-change-transform">
@@ -311,22 +192,41 @@ function Marquee({ items = [] }) {
           0% { transform: translateX(0); }
           100% { transform: translateX(-33.333%); }
         }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
       `}</style>
     </div>
   );
 }
 
-
 export default function App() {
-  const [arama, setArama] = useState("");
-  const [sehir, setSehir] = useState("Tümü");
-  const [kategori, setKategori] = useState("Tümü");
-  const [secili, setSecili] = useState(null);
+  const [arama, setArama] = React.useState<string>("");
+  const [sehir, setSehir] = React.useState<string>("Tümü");
+  const [kategori, setKategori] = React.useState<string>("Tümü");
+  const [secili, setSecili] = React.useState<Firma | null>(null);
 
-  const filtreli = useMemo(() => {
-    return FIRMA_VERI.filter((f) => {
+  // Veriyi public/firma.json'dan çek (fallback: DEFAULT_VERI)
+  const [firmalar, setFirmalar] = React.useState<Firma[]>(DEFAULT_VERI);
+  React.useEffect(() => {
+    fetch("/firma.json")
+      .then((r) => r.ok ? r.json() : Promise.reject())
+      .then((d: Firma[]) => Array.isArray(d) && d.length ? setFirmalar(d) : null)
+      .catch(() => { /* fallback DEFAULT_VERI ile devam */ });
+  }, []);
+
+  const sehirler = React.useMemo(
+    () => ["Tümü", ...Array.from(new Set(firmalar.map((f) => f.sehir)))],
+    [firmalar]
+  );
+  const kategoriler = React.useMemo(
+    () => ["Tümü", ...Array.from(new Set(firmalar.flatMap((f) => f.kategori)))],
+    [firmalar]
+  );
+
+  const filtreli = React.useMemo(() => {
+    return firmalar.filter((f) => {
       const q = arama.trim().toLowerCase();
-      const matchQ = !q ||
+      const matchQ =
+        !q ||
         f.ad.toLowerCase().includes(q) ||
         f.sehir.toLowerCase().includes(q) ||
         f.kategori.some((k) => k.toLowerCase().includes(q)) ||
@@ -335,13 +235,12 @@ export default function App() {
       const matchKat = kategori === "Tümü" || f.kategori.includes(kategori);
       return matchQ && matchSehir && matchKat;
     });
-  }, [arama, sehir, kategori]);
+  }, [arama, sehir, kategori, firmalar]);
 
-  const logoList = useMemo(
-    () => FIRMA_VERI.flatMap((f) => [f.logo, f.gorseller?.[0]].filter(Boolean)),
-    []
+  const logoList = React.useMemo(
+    () => firmalar.flatMap((f) => [f.logo, f.gorseller?.[0]].filter(Boolean) as string[]),
+    [firmalar]
   );
-  
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -405,7 +304,7 @@ export default function App() {
             {[{
               ad: "Batuhan Tiktaş",
               gorev: "CEO",
-              bio: "Vizyon ve iş birliğiyle öğrenci‑firma köprüsünü büyütüyor.",
+              bio: "Vizyon ve iş birliğiyle öğrenci-firma köprüsünü büyütüyor.",
             }, {
               ad: "Batuhan Dinçer",
               gorev: "Kurucu",
@@ -462,6 +361,8 @@ export default function App() {
                 setSehir={setSehir}
                 kategori={kategori}
                 setKategori={setKategori}
+                sehirler={sehirler}
+                kategoriler={kategoriler}
               />
               <FirmaGrid data={filtreli} onOpen={(f) => setSecili(f)} />
             </TabsContent>
@@ -473,6 +374,8 @@ export default function App() {
                 setSehir={setSehir}
                 kategori={kategori}
                 setKategori={setKategori}
+                sehirler={sehirler}
+                kategoriler={kategoriler}
               />
               <FirmaGrid
                 data={filtreli.filter((f) => f.kategori.some((k) => ["Kafe", "Restoran", "Vegan"].includes(k)))}
@@ -487,6 +390,8 @@ export default function App() {
                 setSehir={setSehir}
                 kategori={kategori}
                 setKategori={setKategori}
+                sehirler={sehirler}
+                kategoriler={kategoriler}
               />
               <FirmaGrid
                 data={filtreli.filter((f) => f.kategori.some((k) => ["Çalışma Alanı", "Kitabevi", "Kırtasiye"].includes(k)))}
@@ -501,6 +406,8 @@ export default function App() {
                 setSehir={setSehir}
                 kategori={kategori}
                 setKategori={setKategori}
+                sehirler={sehirler}
+                kategoriler={kategoriler}
               />
               <FirmaGrid
                 data={filtreli.filter((f) => f.kategori.some((k) => ["Spor Salonu", "Teknik Servis", "Elektronik"].includes(k)))}
@@ -532,7 +439,25 @@ export default function App() {
   );
 }
 
-function FiltreBar({ arama, setArama, sehir, setSehir, kategori, setKategori }) {
+function FiltreBar({
+  arama,
+  setArama,
+  sehir,
+  setSehir,
+  kategori,
+  setKategori,
+  sehirler,
+  kategoriler,
+}: {
+  arama: string;
+  setArama: SetState<string>;
+  sehir: string;
+  setSehir: SetState<string>;
+  kategori: string;
+  setKategori: SetState<string>;
+  sehirler: string[];
+  kategoriler: string[];
+}) {
   return (
     <div className="grid md:grid-cols-4 gap-3">
       <div className="md:col-span-2">
@@ -551,7 +476,7 @@ function FiltreBar({ arama, setArama, sehir, setSehir, kategori, setKategori }) 
         value={sehir}
         onChange={(e) => setSehir(e.target.value)}
       >
-        {SEHIRLER.map((s) => (
+        {sehirler.map((s) => (
           <option key={s} value={s}>{s}</option>
         ))}
       </select>
@@ -560,7 +485,7 @@ function FiltreBar({ arama, setArama, sehir, setSehir, kategori, setKategori }) 
         value={kategori}
         onChange={(e) => setKategori(e.target.value)}
       >
-        {KATEGORILER.map((k) => (
+        {kategoriler.map((k) => (
           <option key={k} value={k}>{k}</option>
         ))}
       </select>
@@ -568,7 +493,7 @@ function FiltreBar({ arama, setArama, sehir, setSehir, kategori, setKategori }) 
   );
 }
 
-function FirmaGrid({ data, onOpen }) {
+function FirmaGrid({ data, onOpen }: { data: Firma[]; onOpen: (f: Firma) => void }) {
   if (!data.length) {
     return (
       <div className="text-center text-muted-foreground py-16">
