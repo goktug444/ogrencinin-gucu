@@ -281,7 +281,8 @@ export default function App() {
               Öğrencinin Gücü: yalın ve güvenilir bir <span className="underline underline-offset-4">firma rehberi</span>
             </motion.h1>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              Bu site, anlaşmalı firmaları şeffaf biçimde listeler; konum ve görselleriyle
+              Kuruluşumuz firma ve dükkanlarla antlaşarak öğrencilere özel indirimler
+              uygulamayı hedefler. konum ve görselleriyle
               hızlıca fikir edinmenizi sağlar. Hesap açma derdi yok, haber sitesi akışında
               gezin ve size uygun yeri keşfedin.
             </p>
