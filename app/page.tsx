@@ -217,10 +217,15 @@ export default function App() {
     () => ["Tümü", ...Array.from(new Set(firmalar.map((f) => f.sehir)))],
     [firmalar]
   );
-  const kategoriler = React.useMemo(
-    () => ["Tümü", ...Array.from(new Set(firmalar.flatMap((f) => f.kategori)))],
-    [firmalar]
-  );
+
+  // Yeni kategoriler (veride olmasa bile listede görünsün)
+  const EXTRA_KATS = ["Berber", "Güzellik Salonu", "Dişçi"];
+
+  const kategoriler = React.useMemo(() => {
+    const dyn = Array.from(new Set(firmalar.flatMap((f) => f.kategori)));
+    for (const k of EXTRA_KATS) if (!dyn.includes(k)) dyn.push(k);
+    return ["Tümü", ...dyn];
+  }, [firmalar]);
 
   const filtreli = React.useMemo(() => {
     return firmalar.filter((f) => {
@@ -255,6 +260,7 @@ export default function App() {
             <a href="#amac" className="hover:text-foreground">Amaç</a>
             <a href="#kurucu" className="hover:text-foreground">Kurucular</a>
             <a href="#firmalar" className="hover:text-foreground">Firmalar</a>
+            <a href="#iletisim" className="hover:text-foreground">İletişim</a>
           </nav>
           <a href="#firmalar">
             <Button>Firmalara Bak</Button>
@@ -287,9 +293,12 @@ export default function App() {
             <div className="rounded-2xl border p-4 bg-muted/40">
               <SectionHeading title="Sitenin Amacı" subtitle="Kısa özet" icon={Globe} />
               <ul className="list-disc pl-5 space-y-2 text-sm text-muted-foreground">
-                <li>Öğrencilere <strong>kolay erişilebilir</strong> firma bilgisi sunmak.</li>
+                {/* Son maddeyi başa aldım */}
+                <li><strong>Öğrenci indirimleri</strong> için temel altyapı.</li>
+                {/* Yeni cümle */}
+                <li>Kuruluşumuz firma ve dükkanlarla antlaşarak <strong>öğrencilere özel indirimler</strong> uygulamayı hedefler.</li>
                 <li>Firmalara <strong>temiz bir görünürlük</strong> ve reklam alanı sağlamak.</li>
-                <li>İleride eklenecek <strong>öğrenci indirimleri</strong> için temel altyapı.</li>
+                <li>Öğrencilere <strong>kolay erişilebilir</strong> firma bilgisi sunmak.</li>
               </ul>
             </div>
           </div>
@@ -410,11 +419,30 @@ export default function App() {
                 kategoriler={kategoriler}
               />
               <FirmaGrid
-                data={filtreli.filter((f) => f.kategori.some((k) => ["Spor Salonu", "Teknik Servis", "Elektronik"].includes(k)))}
+                data={filtreli.filter((f) =>
+                  f.kategori.some((k) =>
+                    ["Spor Salonu", "Teknik Servis", "Elektronik", "Berber", "Güzellik Salonu", "Dişçi"].includes(k)
+                  )
+                )}
                 onOpen={(f) => setSecili(f)}
               />
             </TabsContent>
           </Tabs>
+        </div>
+      </section>
+
+      {/* İLETİŞİM */}
+      <section id="iletisim" className="border-t bg-muted/30">
+        <div className="mx-auto max-w-6xl px-4 py-10">
+          <SectionHeading title="İletişim" subtitle="Sorular ve iş birlikleri için" icon={UsersRound} />
+          <div className="text-sm">
+            <p className="mb-3">
+              Bize e-posta ile ulaşın:
+            </p>
+            <a href="mailto:ogrenciningucu2@gmail.com" className="inline-flex items-center gap-2 font-medium hover:underline">
+              ogrenciningucu2@gmail.com
+            </a>
+          </div>
         </div>
       </section>
 
@@ -429,6 +457,7 @@ export default function App() {
               <a className="hover:underline" href="#kurucu">Hakkımızda</a>
               <a className="hover:underline" href="#firmalar">Firmalar</a>
               <a className="hover:underline" href="#amac">Amaç</a>
+              <a className="hover:underline" href="#iletisim">İletişim</a>
             </div>
           </div>
         </div>
