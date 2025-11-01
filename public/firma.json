@@ -1,116 +1,207 @@
 [
-    {
-      "id": "k1",
-      "ad": "Umuttepe Study Café",
-      "sehir": "Kocaeli",
-      "adres": "Umuttepe Kampüs Yolu, İzmit / Kocaeli",
-      "konumUrl": "https://www.google.com/maps/search/?api=1&query=Umuttepe+Study+Cafe+Kocaeli",
-      "kategori": ["Kafe", "Çalışma Alanı"],
-      "aciklama": "Kocaeli Üniversitesi'ne yürüme mesafesinde, sakin ve hızlı internetli çalışma alanı.",
-      "gorseller": [
-        "https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=1400&q=80",
-        "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1400&q=80",
-        "https://images.unsplash.com/photo-1459755486867-b55449bb39ff?auto=format&fit=crop&w=1400&q=80"
-      ],
-      "logo": ""
-    },
-    {
-      "id": "k2",
-      "ad": "İzmit Marina Kafe",
-      "sehir": "Kocaeli",
-      "adres": "Marina Cad., İzmit Sahil, Kocaeli",
-      "konumUrl": "https://www.google.com/maps/search/?api=1&query=İzmit+Marina+Kafe+Kocaeli",
-      "kategori": ["Kafe", "Restoran"],
-      "aciklama": "Deniz kenarında geniş masalar ve ferah ortam. Grup çalışmaları için uygun.",
-      "gorseller": [
-        "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=1400&q=80",
-        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1400&q=80"
-      ],
-      "logo": ""
-    },
-    {
-      "id": "k3",
-      "ad": "Sekapark Çim Alanı",
-      "sehir": "Kocaeli",
-      "adres": "Sekapark, Kültürpark İç Yolu, İzmit / Kocaeli",
-      "konumUrl": "https://www.google.com/maps/search/?api=1&query=Sekapark+Kocaeli",
-      "kategori": ["Çalışma Alanı"],
-      "aciklama": "Açık havada ders çalışmak, etkinlik yapmak ve yürüyüş için ideal alan.",
-      "gorseller": [
-        "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1400&q=80",
-        "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1400&q=80"
-      ],
-      "logo": ""
-    },
-    {
-      "id": "k4",
-      "ad": "Symbol AVM – Tech Service",
-      "sehir": "Kocaeli",
-      "adres": "Symbol AVM, Körfez Mah., Kocaeli",
-      "konumUrl": "https://www.google.com/maps/search/?api=1&query=Symbol+AVM+Kocaeli+Teknik+Servis",
-      "kategori": ["Teknik Servis", "Elektronik"],
-      "aciklama": "Laptop ve telefon onarımı, hızlı teslimat. Öğrenci bütçesine uygun seçenekler.",
-      "gorseller": [
-        "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80",
-        "https://images.unsplash.com/photo-1457305237443-44c3d5a30b89?auto=format&fit=crop&w=1400&q=80"
-      ],
-      "logo": ""
-    },
-    {
-      "id": "k5",
-      "ad": "NCity – Book Corner",
-      "sehir": "Kocaeli",
-      "adres": "NCity AVM, Yahyakaptan, İzmit / Kocaeli",
-      "konumUrl": "https://www.google.com/maps/search/?api=1&query=NCity+Kitap+Kocaeli",
-      "kategori": ["Kitabevi", "Kırtasiye"],
-      "aciklama": "Sınav kaynakları, kırtasiye ürünleri ve hızlı fotokopi hizmeti.",
-      "gorseller": [
-        "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1400&q=80",
-        "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1400&q=80"
-      ],
-      "logo": ""
-    },
-    {
-      "id": "k6",
-      "ad": "İzmit Spor Merkezi",
-      "sehir": "Kocaeli",
-      "adres": "Sanayi Mah., Spor Cad., İzmit / Kocaeli",
-      "konumUrl": "https://www.google.com/maps/search/?api=1&query=İzmit+Spor+Merkezi+Kocaeli",
-      "kategori": ["Spor Salonu"],
-      "aciklama": "Geniş ağırlık alanı, duş ve dolap. Esnek üyelik seçenekleri.",
-      "gorseller": [
-        "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1400&q=80",
-        "https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&fit=crop&w=1400&q=80"
-      ],
-      "logo": ""
-    },
-    {
-      "id": "k7",
-      "ad": "Yahyakaptan Vegan Durağı",
-      "sehir": "Kocaeli",
-      "adres": "Yahyakaptan Mah., İzmit / Kocaeli",
-      "konumUrl": "https://www.google.com/maps/search/?api=1&query=Yahyakaptan+Vegan+Kocaeli",
-      "kategori": ["Restoran", "Vegan"],
-      "aciklama": "Günlük taze vegan menü, paket servis ve doyurucu tabaklar.",
-      "gorseller": [
-        "https://images.unsplash.com/photo-1506354666786-959d6d497f1a?auto=format&fit=crop&w=1400&q=80",
-        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1400&q=80"
-      ],
-      "logo": ""
-    },
-    {
-      "id": "k8",
-      "ad": "Körfez Sahil Çalışma Köşesi",
-      "sehir": "Kocaeli",
-      "adres": "Körfez Sahil Bandı, Kocaeli",
-      "konumUrl": "https://www.google.com/maps/search/?api=1&query=Körfez+Sahil+Kocaeli",
-      "kategori": ["Çalışma Alanı"],
-      "aciklama": "Gün batımında sakin ve serin. Açık havada ders çalışmak için güzel bir nokta.",
-      "gorseller": [
-        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=80",
-        "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1400&q=80"
-      ],
-      "logo": ""
-    }
-  ]
-  
+  {
+    "id": 1,
+    "ad": "Komagene Plajyolu",
+    "sehir": "Kocaeli",
+    "adres": "Cumhuriyet, Sulucak Sk. Işın Sitesi No:1/2A, 41100 İzmit/Kocaeli",
+    "aciklama": "Çiğ köfte ve atıştırmalıklar. Öğrencilere %10 indirim.",
+    "kategori": ["Yemek"],
+    "logo": "/images/komagane-plajyolu/1.jpg",
+    "gorseller": ["/images/komagane-plajyolu/1.jpg"],
+    "konumUrl": "https://www.google.com/maps/search/?api=1&query=Cumhuriyet%2C%20Sulucak%20Sk.%20I%C5%9F%C4%B1n%20Sitesi%20No%3A1%2F2A%2C%2041100%20%C4%B0zmit%2FKocaeli"
+  },
+  {
+    "id": 2,
+    "ad": "Pike Pet Market",
+    "sehir": "Kocaeli",
+    "adres": "Pike Pet Market Plajyolu, miraç sitesi, Cumhuriyet, Sulucak Sk. D:3A, 41570 İzmit/Kocaeli",
+    "aciklama": "Evcil dostlarınız için ürünler. Öğrencilere %10 indirim.",
+    "kategori": ["Pet Shop"],
+    "logo": "/images/pike-pet/2.jpg",
+    "gorseller": ["/images/pike-pet/2.jpg", "/images/pike-pet/3.jpg", "/images/pike-pet/4.jpg", "/images/pike-pet/5.jpg"],
+    "konumUrl": "https://www.google.com/maps/search/?api=1&query=Pike%20Pet%20Market%20Plajyolu%2C%20mira%C3%A7%20sitesi%2C%20Cumhuriyet%2C%20Sulucak%20Sk.%20D%3A3A%2C%2041570%20%C4%B0zmit%2FKocaeli"
+  },
+  {
+    "id": 3,
+    "ad": "Kahve Filosu",
+    "sehir": "Kocaeli",
+    "adres": "Yürüyüş yolunda EREN CAMİİ KARŞISI, Cedit, Atatürk Blv. 5A, 41001 İzmit/Kocaeli",
+    "aciklama": "Kafe menüsünde %15–20 indirim.",
+    "kategori": ["Kafe"],
+    "logo": "/images/kahve-filosu/6.jpg",
+    "gorseller": ["/images/kahve-filosu/6.jpg", "/images/kahve-filosu/7.jpg", "/images/kahve-filosu/8.jpg", "/images/kahve-filosu/9.jpg"],
+    "konumUrl": "https://www.google.com/maps/search/?api=1&query=Cedit%2C%20Atat%C3%BCrk%20Blv.%205A%2C%2041001%20%C4%B0zmit%2FKocaeli"
+  },
+  {
+    "id": 4,
+    "ad": "Bağ Yolu Pilav",
+    "sehir": "Kocaeli",
+    "adres": "Işık Apartmanı, Serdar, İnkılap Cd., 41100 İzmit/Kocaeli",
+    "aciklama": "Ev yemekleri ve pilav. Öğrenci indirimi %10.",
+    "kategori": ["Yemek"],
+    "logo": "/images/bag-yolu-pilav/10.jpeg",
+    "gorseller": ["/images/bag-yolu-pilav/10.jpeg", "/images/bag-yolu-pilav/11.jpeg"],
+    "konumUrl": "https://www.google.com/maps/search/?api=1&query=Serdar%2C%20%C4%B0nk%C4%B1lap%20Cd.%2C%2041100%20%C4%B0zmit%2FKocaeli"
+  },
+  {
+    "id": 5,
+    "ad": "Di Grande Valore Italian",
+    "sehir": "Kocaeli",
+    "adres": "Alikahya Fatih, Kural Sk., 41310 İzmit/Kocaeli",
+    "aciklama": "İtalyan mutfağı. Öğrencilere %15 indirim.",
+    "kategori": ["Yemek"],
+    "logo": "/images/italian/12.jpg",
+    "gorseller": ["/images/italian/12.jpg", "/images/italian/13.jpg", "/images/italian/14.jpg", "/images/italian/15.jpg", "/images/italian/16.jpg"],
+    "konumUrl": "https://www.google.com/maps/search/?api=1&query=Alikahya%20Fatih%2C%20Kural%20Sk.%2C%2041310%20%C4%B0zmit%2FKocaeli"
+  },
+  {
+    "id": 6,
+    "ad": "Hulda Art Gallery Tattoo & Piercing",
+    "sehir": "Kocaeli",
+    "adres": "Karabaş, İstiklal Cd. No:174 D:301 Kat:3, 41040 İzmit/Kocaeli",
+    "aciklama": "3–4 cm minimal 2000₺, 4–6 cm minimal 4000₺; diğer tüm modellerde %20 indirim.",
+    "kategori": ["Dövme & Piercing"],
+    "logo": "/images/art-galeri/17.jpg",
+    "gorseller": ["/images/art-galeri/17.jpg", "/images/art-galeri/18.jpg", "/images/art-galeri/19.jpg", "/images/art-galeri/20.jpg", "/images/art-galeri/21.jpg"],
+    "konumUrl": "https://www.google.com/maps/search/?api=1&query=Karaba%C5%9F%2C%20%C4%B0stiklal%20Cd.%20No%3A174%20D%3A301%20Kat%3A3%2C%2041040%20%C4%B0zmit%2FKocaeli"
+  },
+  {
+    "id": 7,
+    "ad": "Esra Yücekal Güzellik Salonu",
+    "sehir": "Kocaeli",
+    "adres": "Mehmet Ali Paşa Mah. Turan Güneş Cad. No:230, Üçyol (Akbank Karşısı) Kocaeli/İzmit",
+    "aciklama": "Güzellik işlemlerinde %15 indirim.",
+    "kategori": ["Güzellik Salonu"],
+    "logo": "/images/esra-yucekal/21.jpg",
+    "gorseller": ["/images/esra-yucekal/21.jpg", "/images/esra-yucekal/22.jpg", "/images/esra-yucekal/23.jpg", "/images/esra-yucekal/24.png", "/images/esra-yucekal/25.jpg"],
+    "konumUrl": "https://www.google.com/maps/search/?api=1&query=Mehmet%20Ali%20Pa%C5%9Fa%20Mah.%20Turan%20G%C3%BCne%C5%9F%20Cad.%20No%3A230%20%C3%9C%C3%A7yol%2C%20%C4%B0zmit%2FKocaeli"
+  },
+  {
+    "id": 8,
+    "ad": "Parmella Makarna",
+    "sehir": "Kocaeli",
+    "adres": "Karabaş, Asım Efendi Sk. 10 A, 41040 İzmit/Kocaeli",
+    "aciklama": "Taze makarna. Öğrenci indirimi %10.",
+    "kategori": ["Yemek"],
+    "logo": "/images/parmella-makarna/26.jpg",
+    "gorseller": ["/images/parmella-makarna/26.jpg", "/images/parmella-makarna/27.jpg", "/images/parmella-makarna/28.jpg", "/images/parmella-makarna/29.jpg", "/images/parmella-makarna/30.jpg", "/images/parmella-makarna/31.jpg"],
+    "konumUrl": "https://www.google.com/maps/search/?api=1&query=Karaba%C5%9F%2C%20As%C4%B1m%20Efendi%20Sk.%2010%20A%2C%2041040%20%C4%B0zmit%2FKocaeli"
+  },
+  {
+    "id": 9,
+    "ad": "Happy Yellow Suit Kartepe",
+    "sehir": "Kocaeli",
+    "adres": "Nusretiye, Ak Sk. No:14, 41080 Kartepe/Kocaeli",
+    "aciklama": "Hafta içi konaklama %35 indirim.",
+    "kategori": ["Konaklama"],
+    "logo": "/images/suit/31.jpg",
+    "gorseller": ["/images/suit/31.jpg", "/images/suit/32.jpg.jpeg", "/images/suit/33.jpg", "/images/suit/34.jpg", "/images/suit/35.jpeg", "/images/suit/36.jpg", "/images/suit/37.jpg", "/images/suit/38.jpeg", "/images/suit/39.jpg"],
+    "konumUrl": "https://www.google.com/maps/search/?api=1&query=Nusretiye%2C%20Ak%20Sk.%20No%3A14%2C%2041080%20Kartepe%2FKocaeli"
+  },
+  {
+    "id": 10,
+    "ad": "Obur Közde Mantı",
+    "sehir": "Kocaeli",
+    "adres": "Rıza Aygün İşhanı, Tepecik, Kemaliye Cd. No:22-A, 41200 İzmit/Kocaeli",
+    "aciklama": "Mantı menülerinde %20 indirim.",
+    "kategori": ["Yemek"],
+    "logo": "/images/mantici/40.jpg",
+    "gorseller": ["/images/mantici/40.jpg", "/images/mantici/41.jpg", "/images/mantici/42.jpg", "/images/mantici/43.jpg", "/images/mantici/44.png", "/images/mantici/45.png"],
+    "konumUrl": "https://www.google.com/maps/search/?api=1&query=Tepecik%2C%20Kemaliye%20Cd.%20No%3A22-A%2C%2041200%20%C4%B0zmit%2FKocaeli"
+  },
+  {
+    "id": 11,
+    "ad": "Maydonoz Döner (İzmit Merkez)",
+    "sehir": "Kocaeli",
+    "adres": "Ömerağa, Alemdar Cd. No:18/A, 41001 İzmit/Kocaeli",
+    "aciklama": "Döner ürünlerinde %20 indirim.",
+    "kategori": ["Yemek"],
+    "logo": "/images/maydonoz-doner/46.jpg",
+    "gorseller": ["/images/maydonoz-doner/46.jpg", "/images/maydonoz-doner/47.jpg", "/images/maydonoz-doner/48.jpg", "/images/maydonoz-doner/49.jpg"],
+    "konumUrl": "https://www.google.com/maps/search/?api=1&query=%C3%96mera%C4%9Fa%2C%20Alemdar%20Cd.%20No%3A18%2FA%2C%2041001%20%C4%B0zmit%2FKocaeli"
+  },
+  {
+    "id": 12,
+    "ad": "Foto Klinik",
+    "sehir": "Kocaeli",
+    "adres": "K1, Ömerağa, Ömerağa Mahallesi, Abdurrahman Yüksel Cd., 41300 İzmit/Kocaeli",
+    "aciklama": "Fotoğraf ve ekipman. Öğrenci indirimi %5.",
+    "kategori": ["Fotoğrafçı", "Elektronik"],
+    "logo": "/images/foto-klinik/50.jpg",
+    "gorseller": ["/images/foto-klinik/50.jpg", "/images/foto-klinik/51.jpg", "/images/foto-klinik/52.jpg"],
+    "konumUrl": "https://www.google.com/maps/search/?api=1&query=%C3%96mera%C4%9Fa%2C%20Abdurrahman%20Y%C3%BCksel%20Cd.%2C%2041300%20%C4%B0zmit%2FKocaeli"
+  },
+  {
+    "id": 13,
+    "ad": "Dentizmit Ağız ve Diş Sağlığı",
+    "sehir": "Kocaeli",
+    "adres": "Ömerağa, Karayolu Cd. No:59/2, 41100 İzmit/Kocaeli",
+    "aciklama": "Diş sağlığı hizmetlerinde %20 indirim.",
+    "kategori": ["Dişçi"],
+    "logo": "/images/disci/53.jpg",
+    "gorseller": ["/images/disci/53.jpg", "/images/disci/54.jpg", "/images/disci/55.jpg", "/images/disci/56.png"],
+    "konumUrl": "https://www.google.com/maps/search/?api=1&query=%C3%96mera%C4%9Fa%2C%20Karayolu%20Cd.%20No%3A59%2F2%2C%2041100%20%C4%B0zmit%2FKocaeli"
+  },
+  {
+    "id": 14,
+    "ad": "Efe Kırtasiye",
+    "sehir": "Kocaeli",
+    "adres": "Esentepe, Hamit Kaplan Blv. No:209/A, 41780 Körfez/Kocaeli",
+    "aciklama": "Kırtasiye ürünlerinde %20 indirim.",
+    "kategori": ["Kırtasiye"],
+    "logo": "/images/efe-kirtasiye/57.jpg",
+    "gorseller": ["/images/efe-kirtasiye/57.jpg", "/images/efe-kirtasiye/58.jpg", "/images/efe-kirtasiye/59.jpg"],
+    "konumUrl": "https://www.google.com/maps/search/?api=1&query=Esentepe%2C%20Hamit%20Kaplan%20Blv.%20No%3A209%2FA%2C%2041780%20K%C3%B6rfez%2FKocaeli"
+  },
+  {
+    "id": 15,
+    "ad": "AMOR AROMA Café & Fast Food",
+    "sehir": "Kocaeli",
+    "adres": "Hacıhasan, İnönü Cd. No:47 D:E, 41200 İzmit/Kocaeli",
+    "aciklama": "Yemek menülerinde %20 indirim.",
+    "kategori": ["Yemek", "Kafe"],
+    "logo": "/images/amor/60.jpg",
+    "gorseller": ["/images/amor/60.jpg", "/images/amor/61.jpg", "/images/amor/62.jpg"],
+    "konumUrl": "https://www.google.com/maps/search/?api=1&query=Hac%C4%B1hasan%2C%20%C4%B0n%C3%B6n%C3%BC%20Cd.%20No%3A47%20D%3AE%2C%2041200%20%C4%B0zmit%2FKocaeli"
+  },
+  {
+    "id": 16,
+    "ad": "Frida Cafe İzmit",
+    "sehir": "Kocaeli",
+    "adres": "Tepecik, Tokoğlu Sk. No:5, 41050 İzmit/Kocaeli",
+    "aciklama": "Kafe menüsünde %20 indirim.",
+    "kategori": ["Kafe"],
+    "logo": "/images/frida-kafe/63.jpg",
+    "gorseller": ["/images/frida-kafe/63.jpg", "/images/frida-kafe/64.jpg", "/images/frida-kafe/65.jpg", "/images/frida-kafe/66.jpg", "/images/frida-kafe/67.jpg", "/images/frida-kafe/68.jpg"],
+    "konumUrl": "https://www.google.com/maps/search/?api=1&query=Tepecik%2C%20Toko%C4%9Flu%20Sk%20No%3A5%2C%2041050%20%C4%B0zmit%2FKocaeli"
+  },
+  {
+    "id": 17,
+    "ad": "DeBatu HairDesing",
+    "sehir": "Kocaeli",
+    "adres": "Erenler, Deve Bağırtan Sk. 85/A, 41100 İzmit/Kocaeli",
+    "aciklama": "Saç kesim ve bakımda %20 indirim.",
+    "kategori": ["Berber"],
+    "logo": "/images/debatu/69.jpg",
+    "gorseller": ["/images/debatu/69.jpg", "/images/debatu/70.jpg", "/images/debatu/71.jpg", "/images/debatu/72.jpg", "/images/debatu/73.jpg"],
+    "konumUrl": "https://www.google.com/maps/search/?api=1&query=Erenler%2C%20Deve%20Ba%C4%9F%C4%B1rtan%20Sk.%2085%2FA%2C%2041100%20%C4%B0zmit%2FKocaeli"
+  },
+  {
+    "id": 18,
+    "ad": "Çiçek Sepeti Gebze",
+    "sehir": "Kocaeli",
+    "adres": "Hacıhalil, 1207. Sk. No:13, 41400 Gebze/Kocaeli",
+    "aciklama": "Çiçek ve hediye ürünlerinde %20 indirim.",
+    "kategori": ["Çiçekçi"],
+    "logo": "/images/cicek-sepeti/74.png",
+    "gorseller": ["/images/cicek-sepeti/74.png",
+  "/images/cicek-sepeti/75.jpg",
+  "/images/cicek-sepeti/76.jpg",
+  "/images/cicek-sepeti/77.png",
+  "/images/cicek-sepeti/78.jpg",
+  "/images/cicek-sepeti/79.jpg",
+  "/images/cicek-sepeti/80.jpg",
+  "/images/cicek-sepeti/81.jpg"],
+    "konumUrl": "https://www.google.com/maps/search/?api=1&query=Hac%C4%B1halil%2C%201207.%20Sk.%20No%3A13%2C%2041400%20Gebze%2FKocaeli"
+  }
+]
