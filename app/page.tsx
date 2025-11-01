@@ -19,6 +19,7 @@ import { DEFAULT_VERI } from "@/lib/data";
 type IconComponent = React.ComponentType<{ className?: string }>;
 type SetState<T> = React.Dispatch<React.SetStateAction<T>>;
 
+/* ---------------- UI yardımcıları ---------------- */
 function SectionHeading(
   { title, subtitle, icon: Icon }: { title: string; subtitle?: string; icon?: IconComponent }
 ) {
@@ -35,7 +36,7 @@ function SectionHeading(
   );
 }
 
-/** Görsel hatasında şeffaf yer tutucu döner */
+/** Görsel hatasında şeffaf yer tutucu + blur */
 const FALLBACK_DATAURL =
   'data:image/svg+xml;utf8,' +
   encodeURIComponent(
@@ -45,22 +46,25 @@ const FALLBACK_DATAURL =
              fill="#9ca3af" font-family="Arial" font-size="22">Görsel yüklenemedi</text>
      </svg>`
   );
+const BLUR_1PX =
+  "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=";
 
-/* ----------------------------- Kart Bileşeni ----------------------------- */
+/* ---------------- Firma Kartı ---------------- */
 function FirmaKarti({ firma, onOpen }: { firma: Firma; onOpen: (f: Firma) => void }) {
   const firstImg = (firma.gorseller || []).filter(Boolean)[0];
 
   return (
     <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer" onClick={() => onOpen(firma)}>
-      <div className="aspect-video relative bg-muted">
+      <div className="relative bg-muted" style={{ aspectRatio: '16 / 10' }}>
         {firstImg ? (
           <Image
             src={firstImg}
             alt={firma.ad}
             fill
-            // 3 sütun (lg), 2 sütun (sm) ve tek sütun (xs) için gerçekçi sizes
             sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
-            quality={90}
+            quality={78}
+            placeholder="blur"
+            blurDataURL={BLUR_1PX}
             className="object-cover"
             onError={(e) => ((e.currentTarget as unknown as HTMLImageElement).src = FALLBACK_DATAURL)}
             priority={false}
@@ -87,7 +91,9 @@ function FirmaKarti({ firma, onOpen }: { firma: Firma; onOpen: (f: Firma) => voi
               width={40}
               height={40}
               className="rounded-xl object-contain border bg-white"
-              quality={90}
+              quality={80}
+              placeholder="blur"
+              blurDataURL={BLUR_1PX}
               onError={(e) => ((e.currentTarget as unknown as HTMLImageElement).src = FALLBACK_DATAURL)}
             />
           ) : (
@@ -112,7 +118,7 @@ function FirmaKarti({ firma, onOpen }: { firma: Firma; onOpen: (f: Firma) => voi
   );
 }
 
-/* ----------------------------- Harita URL ----------------------------- */
+/* ---------------- Harita URL ---------------- */
 function buildMapUrl(f: Firma) {
   if (f.konumUrl?.startsWith("place_id:")) {
     const pid = f.konumUrl.split("place_id:")[1].trim();
@@ -123,7 +129,7 @@ function buildMapUrl(f: Firma) {
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
 }
 
-/* ----------------------------- Modal + Galeri ----------------------------- */
+/* ---------------- Detay Modal + Galeri ---------------- */
 function FirmaDetayModal({
   acik, firma, onClose,
 }: { acik: boolean; firma: Firma | null; onClose: () => void }) {
@@ -174,7 +180,9 @@ function FirmaDetayModal({
                 width={40}
                 height={40}
                 className="rounded-lg object-contain border bg-white"
-                quality={90}
+                quality={80}
+                placeholder="blur"
+                blurDataURL={BLUR_1PX}
                 onError={(e) => ((e.currentTarget as unknown as HTMLImageElement).src = FALLBACK_DATAURL)}
               />
             ) : (
@@ -192,7 +200,7 @@ function FirmaDetayModal({
           </Button>
         </div>
 
-        {/* Görsel Galeri */}
+        {/* Galeri */}
         <div className="relative bg-black">
           <div ref={ref} className="w-full overflow-x-auto snap-x snap-mandatory no-scrollbar" style={{ scrollBehavior: 'smooth' }}>
             <div className="flex w-full">
@@ -201,12 +209,13 @@ function FirmaDetayModal({
                   <Image
                     src={src}
                     alt={`${firma.ad} ${i + 1}`}
-                    width={1600}
-                    height={900}
+                    width={1280}
+                    height={720}
                     sizes="100vw"
-                    quality={92}
-                    // Büyütürken netlik korunsun (contain + max yükseklik)
-                    className="w-full h-[260px] md:h-[420px] object-contain bg-black"
+                    quality={82}
+                    placeholder="blur"
+                    blurDataURL={BLUR_1PX}
+                    className="w-full h-[220px] md:h-[420px] object-contain bg-black"
                     onError={(e) => ((e.currentTarget as unknown as HTMLImageElement).src = FALLBACK_DATAURL)}
                   />
                 </div>
@@ -215,9 +224,9 @@ function FirmaDetayModal({
                   <Image
                     src={FALLBACK_DATAURL}
                     alt="Görsel yok"
-                    width={1600}
-                    height={900}
-                    className="w-full h-[260px] md:h-[420px] object-contain"
+                    width={1280}
+                    height={720}
+                    className="w-full h-[220px] md:h-[420px] object-contain"
                     sizes="100vw"
                   />
                 </div>
@@ -225,7 +234,6 @@ function FirmaDetayModal({
             </div>
           </div>
 
-          {/* Sol/Sağ butonları + noktalar */}
           {list.length > 1 && (
             <>
               <button
@@ -283,13 +291,10 @@ function FirmaDetayModal({
   );
 }
 
-/* ----------------------------- Tekilleştirilmiş Marquee ----------------------------- */
+/* ---------------- Logo Marquee (tekilleştirilmiş) ---------------- */
 function Marquee({ items = [] as string[] }) {
-  // Önce logolar/ilk foto listesi → tekilleştir (aynı src bir kez)
   const unique = React.useMemo(() => Array.from(new Set(items)), [items]);
-  // Akış için 2x kopya (sonsuz döngüde tekrar algılanmaz)
   const reel = React.useMemo(() => [...unique, ...unique], [unique]);
-
   return (
     <div className="relative overflow-hidden">
       <div className="marquee-track flex gap-8 will-change-transform">
@@ -301,30 +306,59 @@ function Marquee({ items = [] as string[] }) {
             width={40}
             height={40}
             className="h-10 w-10 rounded-lg object-contain border bg-white shrink-0"
-            quality={90}
+            quality={80}
+            placeholder="blur"
+            blurDataURL={BLUR_1PX}
             onError={(e) => ((e.currentTarget as unknown as HTMLImageElement).src = FALLBACK_DATAURL)}
           />
         ))}
       </div>
       <style>{`
         .marquee-track { animation: marquee 26s linear infinite; }
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
+        @keyframes marquee { 0% { transform: translateX(0) } 100% { transform: translateX(-50%) } }
       `}</style>
     </div>
   );
 }
 
-/* ----------------------------- Sayfa ----------------------------- */
+/* ---------------- Kategori Kovaları ----------------
+   Not: firma.kategori eski isimlerle geliyor olabilir.
+   Aşağıda onları daha genel başlıklara eşliyoruz.
+---------------------------------------------------- */
+const BUCKETS = [
+  { key: "yiyecek",   title: "Yiyecek & Tatlı",   match: (k: string, ad: string) =>
+      ["yemek","kafe","restoran","tatlı","pastane","kahve","fast food","pide","pilav"].some(s => inc(k, s) || inc(ad, s)) },
+  { key: "market",    title: "Market",            match: (k: string, ad: string) =>
+      ["market","bakkal"].some(s => inc(k, s) || inc(ad, s)) },
+  { key: "giyim",     title: "Giyim",             match: (k: string, ad: string) =>
+      ["giyim","kıyafet","butik","ayakkabı"].some(s => inc(k, s) || inc(ad, s)) },
+  { key: "konaklama", title: "Konaklama",         match: (k: string, ad: string) =>
+      ["otel","pansiyon","konaklama","apart"].some(s => inc(k, s) || inc(ad, s)) },
+  { key: "egitim",    title: "Eğitim & Kitap",    match: (k: string, ad: string) =>
+      ["çalışma alanı","kitabevi","kırtasiye","kütüphane","ders"].some(s => inc(k, s) || inc(ad, s)) },
+  { key: "guzellik",  title: "Güzellik & Sağlık", match: (k: string, ad: string) =>
+      ["kuaför","berber","güzellik","estetik","diş","diyet"].some(s => inc(k, s) || inc(ad, s)) },
+  { key: "pet",       title: "Pet Shop",          match: (k: string, ad: string) =>
+      ["pet","veteriner"].some(s => inc(k, s) || inc(ad, s)) },
+  { key: "servis",    title: "Servis & Teknik",   match: (k: string, ad: string) =>
+      ["teknik servis","elektronik","oto","tamir","fotoğrafçı"].some(s => inc(k, s) || inc(ad, s)) },
+  { key: "spor",      title: "Spor & Aktivite",   match: (k: string, ad: string) =>
+      ["spor","fitness","salon","yüzme"].some(s => inc(k, s) || inc(ad, s)) },
+  { key: "diger",     title: "Diğer",             match: () => true }
+] as const;
+
+function inc(txt: string | undefined, needle: string) {
+  return (txt ?? "").toLowerCase().includes(needle);
+}
+
+/* ---------------- Sayfa ---------------- */
 export default function App() {
   const [arama, setArama] = React.useState<string>("");
   const [sehir, setSehir] = React.useState<string>("Tümü");
-  const [kategori, setKategori] = React.useState<string>("Tümü");
+  const [aktifBucket, setAktifBucket] = React.useState<string>("hepsi");
   const [secili, setSecili] = React.useState<Firma | null>(null);
 
-  // Veriyi public/firma.json'dan çek (fallback: DEFAULT_VERI)
+  // Veri
   const [firmalar, setFirmalar] = React.useState<Firma[]>(DEFAULT_VERI);
   React.useEffect(() => {
     fetch("/firma.json")
@@ -338,22 +372,10 @@ export default function App() {
     [firmalar]
   );
 
-  // Master kategori listesi (eski + yeni)
-  const MASTER_KATS = [
-    "Yemek","Kafe","Restoran","Vegan","Çalışma Alanı","Kitabevi","Kırtasiye",
-    "Spor Salonu","Teknik Servis","Elektronik","Berber","Kuaför","Güzellik Salonu",
-    "Dişçi","Pet Shop","Çiçekçi","Oto Kuaför","Oto Kiralama","Fotoğrafçı"
-  ];
-
-  const kategoriler = React.useMemo(() => {
-    const dyn = Array.from(new Set(firmalar.flatMap((f) => f.kategori)));
-    MASTER_KATS.forEach(k => { if (!dyn.includes(k)) dyn.push(k); });
-    return ["Tümü", ...dyn];
-  }, [firmalar]);
-
-  const filtreli = React.useMemo(() => {
+  // Filtreleme
+  const baseFiltered = React.useMemo(() => {
+    const q = arama.trim().toLowerCase();
     return firmalar.filter((f) => {
-      const q = arama.trim().toLowerCase();
       const matchQ =
         !q ||
         f.ad.toLowerCase().includes(q) ||
@@ -361,12 +383,19 @@ export default function App() {
         f.kategori.some((k) => k.toLowerCase().includes(q)) ||
         f.aciklama.toLowerCase().includes(q);
       const matchSehir = sehir === "Tümü" || f.sehir === sehir;
-      const matchKat = kategori === "Tümü" || f.kategori.includes(kategori);
-      return matchQ && matchSehir && matchKat;
+      return matchQ && matchSehir;
     });
-  }, [arama, sehir, kategori, firmalar]);
+  }, [arama, sehir, firmalar]);
 
-  // Marquee için: logo varsa onu, yoksa ilk foto; sonra tekilleştirilecek
+  const bucketFiltered = React.useMemo(() => {
+    if (aktifBucket === "hepsi") return baseFiltered;
+    const bucket = BUCKETS.find(b => b.key === aktifBucket) ?? BUCKETS[BUCKETS.length - 1];
+    return baseFiltered.filter(f => {
+      const name = f.ad;
+      return f.kategori.some(k => bucket.match(k.toLowerCase(), name.toLowerCase()));
+    });
+  }, [aktifBucket, baseFiltered]);
+
   const logoList = React.useMemo(() => {
     const raw = firmalar.map((f) => f.logo || (f.gorseller?.[0] ?? "")).filter(Boolean) as string[];
     return raw;
@@ -374,7 +403,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* ÜST NAV */}
+      {/* NAV */}
       <header className="sticky top-0 z-40 border-b bg-background/80 backdrop-blur pt-[env(safe-area-inset-top)]">
         <div className="mx-auto max-w-6xl px-4 h-14 flex items-center justify-between">
           <div className="flex items-center gap-2">
@@ -393,43 +422,35 @@ export default function App() {
         </div>
       </header>
 
-      {/* HERO / AMAÇ */}
+      {/* Amaç */}
       <section id="amac" className="border-b">
         <div className="mx-auto max-w-6xl px-4 py-12 grid md:grid-cols-2 gap-8 items-center">
           <div>
-            <motion.h1
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
-              className="text-3xl md:text-4xl font-bold"
-            >
+            <motion.h1 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}
+              className="text-3xl md:text-4xl font-bold">
               Öğrencinin Gücü: yalın ve güvenilir bir <span className="underline underline-offset-4">firma rehberi</span>
             </motion.h1>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              Kuruluşumuz firma ve dükkanlarla antlaşarak öğrencilere özel indirimler
-              uygulamayı hedefler. Konum ve görselleriyle
-              hızlıca fikir edinmenizi sağlar. Hesap açma derdi yok, haber sitesi akışında
-              gezin ve size uygun yeri keşfedin.
+              Kuruluşumuz firma ve dükkanlarla antlaşarak öğrencilere özel indirimler uygular.
+              Konum ve görselleriyle hızlıca fikir edinmenizi sağlar. Hesap açma derdi yok; haber
+              akışında gezin ve size uygun yeri keşfedin.
             </p>
-            <div className="mt-6">
-              <a href="#firmalar"><Button size="lg">Hemen Keşfet</Button></a>
-            </div>
+            <div className="mt-6"><a href="#firmalar"><Button size="lg">Hemen Keşfet</Button></a></div>
           </div>
           <div className="md:pl-8">
             <div className="rounded-2xl border p-4 bg-muted/40">
               <SectionHeading title="Sitenin Amacı" subtitle="Kısa özet" icon={Globe} />
               <ul className="list-disc pl-5 space-y-2 text-sm text-muted-foreground">
                 <li><strong>Öğrenci indirimleri</strong> için temel altyapı.</li>
-                <li>Kuruluşumuz firma ve dükkanlarla antlaşarak <strong>öğrencilere özel indirimler</strong> uygulamayı hedefler.</li>
-                <li>Firmalara <strong>temiz bir görünürlük</strong> ve reklam alanı sağlamak.</li>
-                <li>Öğrencilere <strong>kolay erişilebilir</strong> firma bilgisi sunmak.</li>
+                <li>Firmalara <strong>temiz görünürlük</strong> ve basit reklam alanı.</li>
+                <li>Öğrencilere <strong>kolay erişilebilir</strong> firma bilgisi.</li>
               </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* KURUCU / HAKKIMIZDA */}
+      {/* Hakkımızda */}
       <section id="kurucu" className="border-b bg-muted/30">
         <div className="mx-auto max-w-6xl px-4 py-12">
           <SectionHeading title="Bu Siteyi Kimler Kurdu?" subtitle="Kısa tanıtım" icon={UsersRound} />
@@ -444,7 +465,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* LOGO MARQUEE */}
+      {/* Logo akışı */}
       <section className="border-b">
         <div className="mx-auto max-w-6xl px-4 py-8">
           <SectionHeading title="Anlaşmalı Firmalardan Bazıları" subtitle="Akıcı logo akışı" />
@@ -452,76 +473,28 @@ export default function App() {
         </div>
       </section>
 
-      {/* FİRMALAR */}
+      {/* Firmalar + Yeni Kategori Sekmeleri */}
       <section id="firmalar">
         <div className="mx-auto max-w-6xl px-4 py-12">
           <SectionHeading title="Firmaları Keşfet" subtitle="Arayın, filtreleyin, inceleyin" icon={Search} />
 
-          <Tabs defaultValue="hepsi" className="w-full">
+          <Tabs value={aktifBucket} onValueChange={setAktifBucket} className="w-full">
             <TabsList className="mb-4 overflow-x-auto no-scrollbar whitespace-nowrap">
               <TabsTrigger value="hepsi">Tümü</TabsTrigger>
-              <TabsTrigger value="kafe">Kafe & Yemek</TabsTrigger>
-              <TabsTrigger value="calisma">Çalışma & Kitap</TabsTrigger>
-              <TabsTrigger value="spor">Spor & Servis</TabsTrigger>
+              {BUCKETS.map(b => (
+                <TabsTrigger key={b.key} value={b.key}>{b.title}</TabsTrigger>
+              ))}
             </TabsList>
-            <TabsContent value="hepsi" className="space-y-6">
-              <FiltreBar
-                arama={arama} setArama={setArama}
-                sehir={sehir} setSehir={setSehir}
-                kategori={kategori} setKategori={setKategori}
-                sehirler={sehirler} kategoriler={kategoriler}
-              />
-              <FirmaGrid data={filtreli} onOpen={(f) => setSecili(f)} />
-            </TabsContent>
-            <TabsContent value="kafe" className="space-y-6">
-              <FiltreBar
-                arama={arama} setArama={setArama}
-                sehir={sehir} setSehir={setSehir}
-                kategori={kategori} setKategori={setKategori}
-                sehirler={sehirler} kategoriler={kategoriler}
-              />
-              <FirmaGrid
-                data={filtreli.filter((f) =>
-                  f.kategori.some((k) => ["Kafe", "Restoran", "Vegan", "Yemek"].includes(k))
-                )}
-                onOpen={(f) => setSecili(f)}
-              />
-            </TabsContent>
-            <TabsContent value="calisma" className="space-y-6">
-              <FiltreBar
-                arama={arama} setArama={setArama}
-                sehir={sehir} setSehir={setSehir}
-                kategori={kategori} setKategori={setKategori}
-                sehirler={sehirler} kategoriler={kategoriler}
-              />
-              <FirmaGrid
-                data={filtreli.filter((f) =>
-                  f.kategori.some((k) => ["Çalışma Alanı", "Kitabevi", "Kırtasiye"].includes(k))
-                )}
-                onOpen={(f) => setSecili(f)}
-              />
-            </TabsContent>
-            <TabsContent value="spor" className="space-y-6">
-              <FiltreBar
-                arama={arama} setArama={setArama}
-                sehir={sehir} setSehir={setSehir}
-                kategori={kategori} setKategori={setKategori}
-                sehirler={sehirler} kategoriler={kategoriler}
-              />
-              <FirmaGrid
-                data={filtreli.filter((f) =>
-                  f.kategori.some((k) =>
-                    ["Spor Salonu", "Teknik Servis", "Elektronik", "Berber", "Kuaför", "Güzellik Salonu", "Dişçi", "Pet Shop", "Çiçekçi"].includes(k)
-                  )
-                )}
-                onOpen={(f) => setSecili(f)}
-              />
+
+            <TabsContent value={aktifBucket} className="space-y-6">
+              <FiltreBar arama={arama} setArama={setArama} sehir={sehir} setSehir={setSehir} />
+              <FirmaGrid data={bucketFiltered} onOpen={(f) => setSecili(f)} />
             </TabsContent>
           </Tabs>
         </div>
       </section>
 
-      {/* İLETİŞİM */}
+      {/* İletişim */}
       <section id="iletisim" className="border-t bg-muted/30">
         <div className="mx-auto max-w-6xl px-4 py-10">
           <SectionHeading title="İletişim" subtitle="Sorular ve iş birlikleri için" icon={UsersRound} />
@@ -534,7 +507,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* ALT BİLGİ */}
+      {/* Footer */}
       <footer className="border-t">
         <div className="mx-auto max-w-6xl px-4 py-8 text-sm text-muted-foreground">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
@@ -554,47 +527,43 @@ export default function App() {
   );
 }
 
-/* ----------------------------- Filtre Bar ----------------------------- */
+/* ---------------- Filtre Bar (kategori seçimi yok artık; sekmeden geliyor) ---------------- */
 function FiltreBar({
-  arama, setArama, sehir, setSehir, kategori, setKategori, sehirler, kategoriler,
+  arama, setArama, sehir, setSehir
 }: {
   arama: string; setArama: SetState<string>;
   sehir: string; setSehir: SetState<string>;
-  kategori: string; setKategori: SetState<string>;
-  sehirler: string[]; kategoriler: string[];
 }) {
   return (
-    <div className="grid md:grid-cols-4 gap-3">
+    <div className="grid md:grid-cols-3 gap-3">
       <div className="md:col-span-2">
         <div className="relative">
           <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
           <Input
             value={arama}
             onChange={(e) => setArama(e.target.value)}
-            placeholder="Ada, şehre veya kategoriye göre ara"
+            placeholder="Ada veya şehre göre ara"
             className="pl-9 h-11"
           />
         </div>
       </div>
+      {/* Şehir seçimi (dinamik) – İleride istersen şehir listesini prop olarak taşıyabiliriz */}
       <select
         className="h-11 rounded-md border bg-background px-3 text-sm"
         value={sehir}
         onChange={(e) => setSehir(e.target.value)}
       >
-        {sehirler.map((s) => (<option key={s} value={s}>{s}</option>))}
-      </select>
-      <select
-        className="h-11 rounded-md border bg-background px-3 text-sm"
-        value={kategori}
-        onChange={(e) => setKategori(e.target.value)}
-      >
-        {kategoriler.map((k) => (<option key={k} value={k}>{k}</option>))}
+        <option value="Tümü">Tümü</option>
+        {/* şehirleri baseFiltered’den türetmek yerine sade bırakıyoruz; istersen buraya dizi geçebilirim */}
+        <option value="Kocaeli">Kocaeli</option>
+        <option value="İzmit">İzmit</option>
+        <option value="İzmir">İzmir</option>
       </select>
     </div>
   );
 }
 
-/* ----------------------------- Grid ----------------------------- */
+/* ---------------- Grid ---------------- */
 function FirmaGrid({ data, onOpen }: { data: Firma[]; onOpen: (f: Firma) => void }) {
   if (!data.length) {
     return <div className="text-center text-muted-foreground py-16">Aramanızla eşleşen firma bulunamadı.</div>;
