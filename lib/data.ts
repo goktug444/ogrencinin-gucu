@@ -271,7 +271,11 @@ export const DEFAULT_VERI: Firma[] = [
       "https://www.google.com/maps/search/?api=1&query=AMOR+Aroma+Cafe+İnönü+Cd+İzmit",
     kategori: ["Yemek", "Kafe"],
     aciklama: "Öğrenci indirimi: %20.",
-    gorseller: ["/images/amor/60.jpg", "/images/amor/61.jpg", "/images/amor/62.jpg"],
+    gorseller: [
+      "/images/amor/60.jpg",
+      "/images/amor/61.jpg",
+      "/images/amor/62.jpg",
+    ],
     logo: "/images/amor/60.jpg",
   },
   {
@@ -282,7 +286,7 @@ export const DEFAULT_VERI: Firma[] = [
     konumUrl:
       "https://www.google.com/maps/search/?api=1&query=Frida+Cafe+Tokoğlu+Sk+İzmit",
     kategori: ["Kafe"],
-    aciklama: "Öğrenci indirimi: %20.",
+    aciklama: "Öğrenci indirimi: %10.",
     gorseller: [
       "/images/frida-kafe/63.jpg",
       "/images/frida-kafe/64.jpg",
@@ -331,5 +335,48 @@ export const DEFAULT_VERI: Firma[] = [
       "/images/cicek-sepeti/81.jpg",
     ],
     logo: "/images/cicek-sepeti/74.png",
+  },
+  {
+    id: "viamore-flowers",
+    ad: "Viamore Flowers",
+    sehir: "Kocaeli",
+    adres: "Yenişehir, Atayurt Cd. No:4 D:A, 41050 İzmit/Kocaeli",
+    konumUrl: "https://maps.app.goo.gl/XiYpZ51y5tmabyLW9",
+    kategori: ["Çiçekçi"],
+    aciklama: "Öğrenci indirimi: %15.",
+    gorseller: [
+      "/images/Viamore-Flowers/82.jpg",
+      "/images/Viamore-Flowers/83.jpg",
+      "/images/Viamore-Flowers/84.jpg",
+      "/images/Viamore-Flowers/85.jpg",
+    ],
+    logo: "/images/Viamore-Flowers/82.jpg",
+  },
+  {
+    id: "luur-coffee",
+    ad: "Luur Coffee & More",
+    sehir: "Kocaeli",
+    adres: "Yenişehir, Atayurt Cd. No:4 D:A, 41050 İzmit/Kocaeli",
+    konumUrl: "https://maps.app.goo.gl/1z3RZLjie3oqVLJq5",
+    kategori: ["Kafe"],
+    aciklama: "Öğrenci indirimi: %20.",
+    gorseller: [
+      "/images/Luur-Coffee-&-More/86.jpg",
+      "/images/Luur-Coffee-&-More/87.jpg",
+      "/images/Luur-Coffee-&-More/88.jpg",
+    ],
+    logo: "/images/Luur-Coffee-&-More/86.jpg",
+  },
+  {
+    id: "fade-hair-studio",
+    ad: "Fade Hair Studio",
+    sehir: "Kocaeli",
+    adres:
+      "Fade Hair Studio, HALKEVİ E-5 YANI KEMAL PAŞA MAH.ANKARA KARAYOLU CAD. BİLYİL APR. 9/A, 41200 İzmit/Kocaeli",
+    konumUrl: "https://maps.app.goo.gl/YKPkHKSHN3k2ruVy9",
+    kategori: ["Berber"],
+    aciklama: "Öğrenciler için saç & sakal 500 TL.",
+    gorseller: ["/images/Fade-Hair-Studio/89.jpg"],
+    logo: "/images/Fade-Hair-Studio/89.jpg",
   },
 ];

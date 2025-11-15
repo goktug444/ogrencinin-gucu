@@ -169,7 +169,7 @@
     "ad": "Frida Cafe İzmit",
     "sehir": "Kocaeli",
     "adres": "Tepecik, Tokoğlu Sk. No:5, 41050 İzmit/Kocaeli",
-    "aciklama": "Kafe menüsünde %20 indirim.",
+    "aciklama": "Kafe menüsünde %10 indirim.",
     "kategori": ["Kafe"],
     "logo": "/images/frida-kafe/63.jpg",
     "gorseller": ["/images/frida-kafe/63.jpg", "/images/frida-kafe/64.jpg", "/images/frida-kafe/65.jpg", "/images/frida-kafe/66.jpg", "/images/frida-kafe/67.jpg", "/images/frida-kafe/68.jpg"],
@@ -194,14 +194,58 @@
     "aciklama": "Çiçek ve hediye ürünlerinde %20 indirim.",
     "kategori": ["Çiçekçi"],
     "logo": "/images/cicek-sepeti/74.png",
-    "gorseller": ["/images/cicek-sepeti/74.png",
-  "/images/cicek-sepeti/75.jpg",
-  "/images/cicek-sepeti/76.jpg",
-  "/images/cicek-sepeti/77.png",
-  "/images/cicek-sepeti/78.jpg",
-  "/images/cicek-sepeti/79.jpg",
-  "/images/cicek-sepeti/80.jpg",
-  "/images/cicek-sepeti/81.jpg"],
+    "gorseller": [
+      "/images/cicek-sepeti/74.png",
+      "/images/cicek-sepeti/75.jpg",
+      "/images/cicek-sepeti/76.jpg",
+      "/images/cicek-sepeti/77.png",
+      "/images/cicek-sepeti/78.jpg",
+      "/images/cicek-sepeti/79.jpg",
+      "/images/cicek-sepeti/80.jpg",
+      "/images/cicek-sepeti/81.jpg"
+    ],
     "konumUrl": "https://www.google.com/maps/search/?api=1&query=Hac%C4%B1halil%2C%201207.%20Sk.%20No%3A13%2C%2041400%20Gebze%2FKocaeli"
+  },
+  {
+    "id": 19,
+    "ad": "Viamore Flowers",
+    "sehir": "Kocaeli",
+    "adres": "Yenişehir, Atayurt Cd. No:4 D:A, 41050 İzmit/Kocaeli",
+    "aciklama": "Çiçek ve aranjmanlarda %15 indirim.",
+    "kategori": ["Çiçekçi"],
+    "logo": "/images/Viamore-Flowers/82.jpg",
+    "gorseller": [
+      "/images/Viamore-Flowers/82.jpg",
+      "/images/Viamore-Flowers/83.jpg",
+      "/images/Viamore-Flowers/84.jpg",
+      "/images/Viamore-Flowers/85.jpg"
+    ],
+    "konumUrl": "https://maps.app.goo.gl/XiYpZ51y5tmabyLW9"
+  },
+  {
+    "id": 20,
+    "ad": "Luur Coffee & More",
+    "sehir": "Kocaeli",
+    "adres": "Yenişehir, Atayurt Cd. No:4 D:A, 41050 İzmit/Kocaeli",
+    "aciklama": "Kafe menüsünde %20 indirim.",
+    "kategori": ["Kafe"],
+    "logo": "/images/Luur-Coffee-&-More/86.jpg",
+    "gorseller": [
+      "/images/Luur-Coffee-&-More/86.jpg",
+      "/images/Luur-Coffee-&-More/87.jpg",
+      "/images/Luur-Coffee-&-More/88.jpg"
+    ],
+    "konumUrl": "https://maps.app.goo.gl/1z3RZLjie3oqVLJq5"
+  },
+  {
+    "id": 21,
+    "ad": "Fade Hair Studio",
+    "sehir": "Kocaeli",
+    "adres": "Fade Hair Studio, HALKEVİ E-5 YANI KEMAL PAŞA MAH.ANKARA KARAYOLU CAD. BİLYİL APR. 9/A, 41200 İzmit/Kocaeli",
+    "aciklama": "Öğrenciler için saç & sakal 500 TL.",
+    "kategori": ["Berber"],
+    "logo": "/images/Fade-Hair-Studio/89.jpg",
+    "gorseller": ["/images/Fade-Hair-Studio/89.jpg"],
+    "konumUrl": "https://maps.app.goo.gl/YKPkHKSHN3k2ruVy9"
   }
 ]
