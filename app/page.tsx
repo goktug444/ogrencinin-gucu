@@ -1,4 +1,3 @@
-// app/page.tsx
 "use client";
 
 import React from "react";
@@ -357,7 +356,7 @@ function FirmaDetayModal({
         </div>
 
         {/* Bilgi alanı – fazla metin olursa burada dikey scroll olur */}
-        <div className="p-4 grid md:grid-cols-3 gap-4 flex-1 overflow-y-auto">
+        <div className="p-4 grid md:grid-cols-3 gap-4 flex-1 overflow-y-auto min-h-[140px]">
           <div className="md:col-span-2 space-y-3">
             <SectionHeading
               title="Hakkında"
