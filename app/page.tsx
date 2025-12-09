@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from "react";
 import Image from "next/image";
@@ -355,8 +355,15 @@ function FirmaDetayModal({
           </div>
         </div>
 
-        {/* Bilgi alanı – fazla metin olursa burada dikey scroll olur */}
-        <div className="p-4 grid md:grid-cols-3 gap-4 flex-1 overflow-y-auto min-h-[140px]">
+        {/* ✅ ÖNEMLİ DÜZELTME: Alt bilgi alanı artık opak (okunabilir) */}
+        <div
+          className="
+            p-4 grid md:grid-cols-3 gap-4 flex-1 overflow-y-auto min-h-[140px]
+            border-t
+            bg-white dark:bg-background
+            relative z-30
+          "
+        >
           <div className="md:col-span-2 space-y-3">
             <SectionHeading
               title="Hakkında"

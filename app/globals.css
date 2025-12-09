@@ -120,3 +120,15 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* ✅ KESİLMESİN / SCROLL KALSIN (en güvenli katman)
+   - overflow: hidden YOK
+   - Sayfa taşarsa normal şekilde scroll çıkar
+*/
+html,
+body {
+  height: auto;
+  min-height: 100%;
+  overflow: auto;
+  -webkit-text-size-adjust: 100%;
+}
