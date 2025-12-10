@@ -71,10 +71,7 @@ export const DEFAULT_VERI: Firma[] = [
       "https://www.google.com/maps/search/?api=1&query=Bağ+Yolu+Pilav+Serdar+İnkılap+Cd+İzmit",
     kategori: ["Yemek"],
     aciklama: "Öğrenci indirimi: %10.",
-    gorseller: [
-      "/images/bag-yolu-pilav/10.jpeg",
-      "/images/bag-yolu-pilav/11.jpeg",
-    ],
+    gorseller: ["/images/bag-yolu-pilav/10.jpeg", "/images/bag-yolu-pilav/11.jpeg"],
     logo: "/images/bag-yolu-pilav/10.jpeg",
   },
   {
@@ -99,8 +96,7 @@ export const DEFAULT_VERI: Firma[] = [
     id: "art-galeri",
     ad: "Hulda Art Gallery Tattoo & Piercing",
     sehir: "Kocaeli",
-    adres:
-      "Karabaş, İstiklal Cd. No:174 D:301 Kat:3, 41040 İzmit/Kocaeli",
+    adres: "Karabaş, İstiklal Cd. No:174 D:301 Kat:3, 41040 İzmit/Kocaeli",
     konumUrl:
       "https://www.google.com/maps/search/?api=1&query=Hulda+Art+Gallery+Tattoo+%26+Piercing+İzmit",
     kategori: ["Dövme", "Piercing"],
@@ -179,8 +175,7 @@ export const DEFAULT_VERI: Firma[] = [
     id: "mantici",
     ad: "Obur Közde Mantı",
     sehir: "Kocaeli",
-    adres:
-      "Rıza Aygün İşhanı, Tepecik, Kemaliye Cd. No:22-A, 41200 İzmit/Kocaeli",
+    adres: "Rıza Aygün İşhanı, Tepecik, Kemaliye Cd. No:22-A, 41200 İzmit/Kocaeli",
     konumUrl:
       "https://www.google.com/maps/search/?api=1&query=Obur+Közde+Mantı+Kemaliye+Cd+İzmit",
     kategori: ["Yemek"],
@@ -216,17 +211,12 @@ export const DEFAULT_VERI: Firma[] = [
     id: "foto-klinik",
     ad: "Foto Klinik",
     sehir: "Kocaeli",
-    adres:
-      "K1, Ömerağa, Ömerağa Mah., Abdurrahman Yüksel Cd., 41300 İzmit/Kocaeli",
+    adres: "K1, Ömerağa, Ömerağa Mah., Abdurrahman Yüksel Cd., 41300 İzmit/Kocaeli",
     konumUrl:
       "https://www.google.com/maps/search/?api=1&query=Foto+Klinik+Abdurrahman+Yüksel+Cd+İzmit",
     kategori: ["Fotoğrafçı"],
     aciklama: "Öğrenci indirimi: %5.",
-    gorseller: [
-      "/images/foto-klinik/50.jpg",
-      "/images/foto-klinik/51.jpg",
-      "/images/foto-klinik/52.jpg",
-    ],
+    gorseller: ["/images/foto-klinik/50.jpg", "/images/foto-klinik/51.jpg", "/images/foto-klinik/52.jpg"],
     logo: "/images/foto-klinik/50.jpg",
   },
   {
@@ -238,12 +228,7 @@ export const DEFAULT_VERI: Firma[] = [
       "https://www.google.com/maps/search/?api=1&query=Dentizmit+Ağız+ve+Diş+Sağlığı+Karayolu+Cd+İzmit",
     kategori: ["Dişçi"],
     aciklama: "Öğrenci indirimi: %20.",
-    gorseller: [
-      "/images/disci/53.jpg",
-      "/images/disci/54.jpg",
-      "/images/disci/55.jpg",
-      "/images/disci/56.png",
-    ],
+    gorseller: ["/images/disci/53.jpg", "/images/disci/54.jpg", "/images/disci/55.jpg", "/images/disci/56.png"],
     logo: "/images/disci/53.jpg",
   },
   {
@@ -255,11 +240,7 @@ export const DEFAULT_VERI: Firma[] = [
       "https://www.google.com/maps/search/?api=1&query=Efe+Kırtasiye+Hamit+Kaplan+Blv+Körfez",
     kategori: ["Kırtasiye"],
     aciklama: "Öğrenci indirimi: %20.",
-    gorseller: [
-      "/images/efe-kirtasiye/57.jpg",
-      "/images/efe-kirtasiye/58.jpg",
-      "/images/efe-kirtasiye/59.jpg",
-    ],
+    gorseller: ["/images/efe-kirtasiye/57.jpg", "/images/efe-kirtasiye/58.jpg", "/images/efe-kirtasiye/59.jpg"],
     logo: "/images/efe-kirtasiye/57.jpg",
   },
   {
@@ -271,11 +252,7 @@ export const DEFAULT_VERI: Firma[] = [
       "https://www.google.com/maps/search/?api=1&query=AMOR+Aroma+Cafe+İnönü+Cd+İzmit",
     kategori: ["Yemek", "Kafe"],
     aciklama: "Öğrenci indirimi: %20.",
-    gorseller: [
-      "/images/amor/60.jpg",
-      "/images/amor/61.jpg",
-      "/images/amor/62.jpg",
-    ],
+    gorseller: ["/images/amor/60.jpg", "/images/amor/61.jpg", "/images/amor/62.jpg"],
     logo: "/images/amor/60.jpg",
   },
   {
@@ -378,5 +355,72 @@ export const DEFAULT_VERI: Firma[] = [
     aciklama: "Öğrenciler için saç & sakal 500 TL.",
     gorseller: ["/images/Fade-Hair-Studio/89.jpg"],
     logo: "/images/Fade-Hair-Studio/89.jpg",
+  },
+
+  /* ---------------- YENİ EKLENEN 5 DÜKKAN ---------------- */
+
+  {
+    id: "kavurmaci-remzi",
+    ad: "Kavurmacı Remzi",
+    sehir: "Kocaeli",
+    adres: "Kuruçeşme Fatih, İsmail Özen Cd. No:17/A, 41100 İzmit/Kocaeli",
+    konumUrl: "https://maps.app.goo.gl/we86LV759okxLD9y7",
+    kategori: ["Yemek"],
+    aciklama: "Öğrenci indirimi: %10.",
+    gorseller: [
+      "/images/kavurmaci-remzi/90.jpg",
+      "/images/kavurmaci-remzi/91.jpg",
+      "/images/kavurmaci-remzi/92.jpg",
+    ],
+    logo: "/images/kavurmaci-remzi/90.jpg",
+  },
+  {
+    id: "sert-cetin-cafe",
+    ad: "Sertçetin Kafe",
+    sehir: "Kocaeli",
+    adres: "Karabaş, 41040 İzmit/Kocaeli",
+    konumUrl: "https://maps.app.goo.gl/HSdKg2VPD1TsqEU7A",
+    kategori: ["Kafe"],
+    aciklama: "Öğrenci indirimi: %10.",
+    gorseller: ["/images/sert-cetin-cafe/93.jpeg", "/images/sert-cetin-cafe/94.webp"],
+    logo: "/images/sert-cetin-cafe/93.jpeg",
+  },
+  {
+    id: "blue-white-guzellik-salonu",
+    ad: "Blue White",
+    sehir: "Kocaeli",
+    adres: "Kozluk, Orduevi Sk. No:A, 41200 İzmit/Kocaeli",
+    konumUrl: "https://maps.app.goo.gl/fp8PMKhpJEuKFvqG6",
+    kategori: ["Güzellik Salonu"],
+    aciklama: "Öğrenci indirimi: %30.",
+    gorseller: [
+      "/images/blue-white-guzellik-salonu/95.jpeg",
+      "/images/blue-white-guzellik-salonu/96.jpeg",
+    ],
+    logo: "/images/blue-white-guzellik-salonu/95.jpeg",
+  },
+  {
+    id: "simay-pismaniye",
+    ad: "Simay Pişmaniye",
+    sehir: "Kocaeli",
+    adres: "Ömerağa, İstiklal Cd., Saroğlu İş Hanı No:83 Kat:1, İzmit/Kocaeli",
+    konumUrl:
+      "https://www.google.com/maps/search/?api=1&query=Simay+Pişmaniye+İzmit",
+    kategori: ["Tatlı"],
+    aciklama: "Öğrenci indirimi: %50.",
+    gorseller: ["/images/simay-pismaniye/97.jpg"],
+    logo: "/images/simay-pismaniye/97.jpg",
+  },
+  {
+    id: "belsa-han-sofrasi",
+    ad: "Belsa Han Sofrası",
+    sehir: "Kocaeli",
+    adres: "İzmit/Kocaeli",
+    konumUrl:
+      "https://www.google.com/maps/search/?api=1&query=Belsa+Han+Sofrası+İzmit",
+    kategori: ["Yemek"],
+    aciklama: "Öğrenci indirimi: %10.",
+    gorseller: ["/images/belsa-han-sofrasi/98.jpg"],
+    logo: "/images/belsa-han-sofrasi/98.jpg",
   },
 ];

@@ -74,8 +74,8 @@ function FirmaKarti({ firma, onOpen }: { firma: Firma; onOpen: (f: Firma) => voi
       className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
       onClick={() => onOpen(firma)}
     >
-      {/* Mobilde daha dengeli görünmesi için oran ve makul yükseklik */}
-      <div className="relative bg-muted" style={{ aspectRatio: "4 / 3" }}>
+      {/* ✅ MOBİL DÜZELTME: Kart görseli mobilde fazla uzamasın */}
+      <div className="relative bg-muted h-44 sm:h-52 lg:h-56">
         {firstImg ? (
           <Image
             src={firstImg}
@@ -105,6 +105,7 @@ function FirmaKarti({ firma, onOpen }: { firma: Firma; onOpen: (f: Firma) => voi
           ))}
         </div>
       </div>
+
       <CardContent className="p-4">
         <div className="flex items-start gap-3">
           {firma.logo ? (
@@ -137,12 +138,19 @@ function FirmaKarti({ firma, onOpen }: { firma: Firma; onOpen: (f: Firma) => voi
             <p className="text-sm text-muted-foreground line-clamp-2 mt-1">
               {firma.aciklama}
             </p>
-            <div className="flex items-center gap-2 text-sm mt-3">
-              <MapPin className="w-4 h-4 text-muted-foreground" />
-              <span className="truncate" title={firma.adres}>
+
+            {/* ✅ ASIL MOBİL SORUNU ÇÖZEN DÜZELTME:
+                truncate kaldırıldı -> mobilde adres 2 satıra kadar sığar */}
+            <div className="flex items-start gap-2 text-sm mt-3">
+              <MapPin className="w-4 h-4 text-muted-foreground mt-0.5 shrink-0" />
+              <span
+                className="break-words line-clamp-2 sm:line-clamp-1"
+                title={firma.adres}
+              >
                 {firma.adres}
               </span>
             </div>
+
           </div>
         </div>
       </CardContent>
@@ -183,6 +191,16 @@ function FirmaDetayModal({
   const [idx, setIdx] = React.useState(0);
   const touchStartX = React.useRef<number | null>(null);
 
+  // ✅ Modal açıkken arka plan scroll kilidi (telefon/desktop)
+  React.useEffect(() => {
+    if (!acik) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [acik]);
+
   // Modal her açıldığında ilk görsele dön
   React.useEffect(() => {
     if (acik) setIdx(0);
@@ -221,15 +239,9 @@ function FirmaDetayModal({
     const endX = e.changedTouches[0]?.clientX ?? touchStartX.current;
     const deltaX = endX - touchStartX.current;
 
-    // Eşik: 40px üzeri kaydırma -> foto değiştir
     if (Math.abs(deltaX) > 40) {
-      if (deltaX < 0) {
-        // sola kaydırma -> sonraki
-        go(1);
-      } else {
-        // sağa kaydırma -> önceki
-        go(-1);
-      }
+      if (deltaX < 0) go(1);
+      else go(-1);
     }
 
     touchStartX.current = null;
@@ -245,12 +257,13 @@ function FirmaDetayModal({
       className="fixed inset-0 z-50 grid place-items-center p-4 bg-black/40 backdrop-blur-sm"
       onClick={onClose}
     >
-      {/* max-h + flex ile mobilde taşma yerine içerik içinde scroll olsun */}
+      {/* ✅ DÜZELTME: Modal tek parça scroll olsun */}
       <div
-        className="max-w-5xl w-full max-h-[90vh] rounded-2xl bg-background shadow-xl flex flex-col"
+        className="max-w-5xl w-full max-h-[92dvh] rounded-2xl bg-background shadow-xl overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-center justify-between p-4 border-b flex-shrink-0">
+        {/* ✅ Header sticky */}
+        <div className="sticky top-0 z-10 flex items-center justify-between p-4 border-b bg-background">
           <div className="flex items-center gap-3">
             {firma.logo ? (
               <Image
@@ -283,13 +296,12 @@ function FirmaDetayModal({
         </div>
 
         {/* Galeri – tek aktif görsel + blur arka plan */}
-        <div className="relative bg-black flex-shrink-0">
+        <div className="relative bg-black">
           <div
-            className="relative w-full aspect-[4/3] md:aspect-[16/9] overflow-hidden"
+            className="relative w-full h-[42dvh] md:h-[52vh] max-h-[520px] overflow-hidden"
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
           >
-            {/* Blur arka plan (siyah kenar yerine) */}
             <div
               className="absolute inset-0 pointer-events-none"
               style={{
@@ -301,7 +313,7 @@ function FirmaDetayModal({
               }}
               aria-hidden="true"
             />
-            {/* Asıl görsel */}
+
             <Image
               src={aktifSrc}
               alt={firma.ad}
@@ -319,7 +331,6 @@ function FirmaDetayModal({
 
             {list.length > 1 && (
               <>
-                {/* Sol ok */}
                 <button
                   type="button"
                   aria-label="Önceki"
@@ -329,7 +340,6 @@ function FirmaDetayModal({
                   <ChevronLeft className="w-5 h-5" />
                 </button>
 
-                {/* Sağ ok */}
                 <button
                   type="button"
                   aria-label="Sonraki"
@@ -339,7 +349,6 @@ function FirmaDetayModal({
                   <ChevronRight className="w-5 h-5" />
                 </button>
 
-                {/* Noktalar */}
                 <div className="absolute bottom-3 inset-x-0 flex justify-center gap-2 z-20">
                   {list.map((_, i) => (
                     <span
@@ -355,10 +364,10 @@ function FirmaDetayModal({
           </div>
         </div>
 
-        {/* ✅ ÖNEMLİ DÜZELTME: Alt bilgi alanı artık opak (okunabilir) */}
+        {/* ✅ Alt bilgi alanı: artık modal scroll ile kesin görünür */}
         <div
           className="
-            p-4 grid md:grid-cols-3 gap-4 flex-1 overflow-y-auto min-h-[140px]
+            p-4 grid md:grid-cols-3 gap-4
             border-t
             bg-white dark:bg-background
             relative z-30
@@ -400,10 +409,9 @@ function FirmaDetayModal({
             </div>
           </div>
         </div>
-      </div>
 
-      {/* no-scrollbar sınıfı için stil (TabsList'te de kullanılıyor) */}
-      <style>{`.no-scrollbar::-webkit-scrollbar{display:none}`}</style>
+        <style>{`.no-scrollbar::-webkit-scrollbar{display:none}`}</style>
+      </div>
     </div>
   );
 }
@@ -689,7 +697,8 @@ export default function App() {
       </section>
 
       {/* Firmalar + Kategori Sekmeleri */}
-      <section id="firmalar">
+      {/* ✅ Anchor kırpma olmasın: scroll-mt */}
+      <section id="firmalar" className="scroll-mt-16">
         <div className="mx-auto max-w-6xl px-4 py-12">
           <SectionHeading
             title="Firmaları Keşfet"

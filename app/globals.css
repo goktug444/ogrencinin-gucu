@@ -129,6 +129,8 @@ html,
 body {
   height: auto;
   min-height: 100%;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden; /* ✅ Mobilde *yatay taşmayı bitirir */
   -webkit-text-size-adjust: 100%;
 }
+

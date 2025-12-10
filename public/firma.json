@@ -247,5 +247,61 @@
     "logo": "/images/Fade-Hair-Studio/89.jpg",
     "gorseller": ["/images/Fade-Hair-Studio/89.jpg"],
     "konumUrl": "https://maps.app.goo.gl/YKPkHKSHN3k2ruVy9"
+  },
+
+  {
+    "id": 22,
+    "ad": "Kavurmacı Remzi",
+    "sehir": "Kocaeli",
+    "adres": "Kuruçeşme Fatih, İsmail Özen Cd. No:17/A, 41100 İzmit/Kocaeli",
+    "aciklama": "Kavurma ve yemek çeşitleri. Öğrencilere %10 indirim.",
+    "kategori": ["Yemek"],
+    "logo": "/images/kavurmaci-remzi/90.jpg",
+    "gorseller": ["/images/kavurmaci-remzi/90.jpg", "/images/kavurmaci-remzi/91.jpg", "/images/kavurmaci-remzi/92.jpg"],
+    "konumUrl": "https://maps.app.goo.gl/we86LV759okxLD9y7"
+  },
+  {
+    "id": 23,
+    "ad": "Sertçetin Kafe",
+    "sehir": "Kocaeli",
+    "adres": "Karabaş, 41040 İzmit/Kocaeli",
+    "aciklama": "Kafe menüsünde öğrencilere %10 indirim.",
+    "kategori": ["Kafe"],
+    "logo": "/images/sert-cetin-cafe/93.jpeg",
+    "gorseller": ["/images/sert-cetin-cafe/93.jpeg", "/images/sert-cetin-cafe/94.webp"],
+    "konumUrl": "https://maps.app.goo.gl/HSdKg2VPD1TsqEU7A"
+  },
+  {
+    "id": 24,
+    "ad": "Blue White",
+    "sehir": "Kocaeli",
+    "adres": "Kozluk, Orduevi Sk. No.: A, 41200 İzmit/Kocaeli",
+    "aciklama": "Güzellik hizmetlerinde öğrencilere %30 indirim.",
+    "kategori": ["Güzellik Salonu"],
+    "logo": "/images/blue-white-guzellik-salonu/95.jpeg",
+    "gorseller": ["/images/blue-white-guzellik-salonu/95.jpeg", "/images/blue-white-guzellik-salonu/96.jpeg"],
+    "konumUrl": "https://maps.app.goo.gl/fp8PMKhpJEuKFvqG6"
+  },
+  {
+    "id": 25,
+    "ad": "Simay Pişmaniye",
+    "sehir": "Kocaeli",
+    "adres": "Ömerağa Mahallesi, İstiklal Cd., Saroğlu İş Hanı No:83 Kat:1, İzmit/Kocaeli",
+    "aciklama": "Pişmaniye ve tatlı ürünlerinde öğrencilere %50 indirim.",
+    "kategori": ["Tatlı"],
+    "logo": "/images/simay-pismaniye/97.jpg",
+    "gorseller": ["/images/simay-pismaniye/97.jpg"],
+    "konumUrl": "https://www.google.com/maps/search/?api=1&query=Simay%20Pişmaniye%20Ömerağa%20İstiklal%20Cd%20Saroğlu%20İş%20Hanı%20İzmit"
+  },
+  {
+    "id": 26,
+    "ad": "Belsa Han Sofrası",
+    "sehir": "Kocaeli",
+    "adres": "İzmit/Kocaeli",
+    "aciklama": "Ev yemekleri ve menülerde öğrencilere %10 indirim.",
+    "kategori": ["Yemek"],
+    "logo": "/images/belsa-han-sofrasi/98.jpg",
+    "gorseller": ["/images/belsa-han-sofrasi/98.jpg"],
+    "konumUrl": "https://www.google.com/maps/search/?api=1&query=Belsa%20Han%20Sofrası%20İzmit"
   }
 ]
