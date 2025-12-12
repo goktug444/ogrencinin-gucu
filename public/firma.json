@@ -6,8 +6,8 @@
     "adres": "Cumhuriyet, Sulucak Sk. Işın Sitesi No:1/2A, 41100 İzmit/Kocaeli",
     "aciklama": "Çiğ köfte ve atıştırmalıklar. Öğrencilere %10 indirim.",
     "kategori": ["Yemek"],
-    "logo": "/images/komagane-plajyolu/1.jpg",
-    "gorseller": ["/images/komagane-plajyolu/1.jpg"],
+    "logo": "/images/komagene-plajyolu/1.jpg",
+    "gorseller": ["/images/komagene-plajyolu/1.jpg"],
     "konumUrl": "https://www.google.com/maps/search/?api=1&query=Cumhuriyet%2C%20Sulucak%20Sk.%20I%C5%9F%C4%B1n%20Sitesi%20No%3A1%2F2A%2C%2041100%20%C4%B0zmit%2FKocaeli"
   },
   {
@@ -249,59 +249,128 @@
     "konumUrl": "https://maps.app.goo.gl/YKPkHKSHN3k2ruVy9"
   },
 
+  /* --- YENİ 5 DÜKKAN --- */
   {
     "id": 22,
     "ad": "Kavurmacı Remzi",
     "sehir": "Kocaeli",
     "adres": "Kuruçeşme Fatih, İsmail Özen Cd. No:17/A, 41100 İzmit/Kocaeli",
-    "aciklama": "Kavurma ve yemek çeşitleri. Öğrencilere %10 indirim.",
-    "kategori": ["Yemek"],
+    "aciklama": "Öğrencilere %10 indirim.",
+    "kategori": ["Yemek", "Restoran"],
     "logo": "/images/kavurmaci-remzi/90.jpg",
     "gorseller": ["/images/kavurmaci-remzi/90.jpg", "/images/kavurmaci-remzi/91.jpg", "/images/kavurmaci-remzi/92.jpg"],
-    "konumUrl": "https://maps.app.goo.gl/we86LV759okxLD9y7"
+    "konumUrl": "https://maps.app.goo.gl/M1GvwGxUVCPugwiw5"
   },
   {
     "id": 23,
     "ad": "Sertçetin Kafe",
     "sehir": "Kocaeli",
     "adres": "Karabaş, 41040 İzmit/Kocaeli",
-    "aciklama": "Kafe menüsünde öğrencilere %10 indirim.",
+    "aciklama": "Öğrencilere %10 indirim.",
     "kategori": ["Kafe"],
     "logo": "/images/sert-cetin-cafe/93.jpeg",
     "gorseller": ["/images/sert-cetin-cafe/93.jpeg", "/images/sert-cetin-cafe/94.webp"],
-    "konumUrl": "https://maps.app.goo.gl/HSdKg2VPD1TsqEU7A"
+    "konumUrl": "https://maps.app.goo.gl/we86LV759okxLD9y7"
   },
   {
     "id": 24,
-    "ad": "Blue White",
+    "ad": "Blue White Güzellik Salonu",
     "sehir": "Kocaeli",
     "adres": "Kozluk, Orduevi Sk. No.: A, 41200 İzmit/Kocaeli",
-    "aciklama": "Güzellik hizmetlerinde öğrencilere %30 indirim.",
+    "aciklama": "Güzellik işlemlerinde %30 indirim.",
     "kategori": ["Güzellik Salonu"],
     "logo": "/images/blue-white-guzellik-salonu/95.jpeg",
     "gorseller": ["/images/blue-white-guzellik-salonu/95.jpeg", "/images/blue-white-guzellik-salonu/96.jpeg"],
-    "konumUrl": "https://maps.app.goo.gl/fp8PMKhpJEuKFvqG6"
+    "konumUrl": "https://maps.app.goo.gl/HSdKg2VPD1TsqEU7A"
   },
   {
     "id": 25,
     "ad": "Simay Pişmaniye",
     "sehir": "Kocaeli",
-    "adres": "Ömerağa Mahallesi, İstiklal Cd., Saroğlu İş Hanı No:83 Kat:1, İzmit/Kocaeli",
-    "aciklama": "Pişmaniye ve tatlı ürünlerinde öğrencilere %50 indirim.",
-    "kategori": ["Tatlı"],
+    "adres": "Ömerağa Mah., İstiklal Cd., Saroğlu İş Hanı No:83, Kat:1, İzmit/Kocaeli",
+    "aciklama": "Tüm ürünlerde %50 indirim.",
+    "kategori": ["Tatlı", "Şekerleme"],
     "logo": "/images/simay-pismaniye/97.jpg",
     "gorseller": ["/images/simay-pismaniye/97.jpg"],
-    "konumUrl": "https://www.google.com/maps/search/?api=1&query=Simay%20Pişmaniye%20Ömerağa%20İstiklal%20Cd%20Saroğlu%20İş%20Hanı%20İzmit"
+    "konumUrl": "https://maps.app.goo.gl/fp8PMKhpJEuKFvqG6"
   },
   {
     "id": 26,
     "ad": "Belsa Han Sofrası",
     "sehir": "Kocaeli",
-    "adres": "İzmit/Kocaeli",
-    "aciklama": "Ev yemekleri ve menülerde öğrencilere %10 indirim.",
+    "adres": "İzmit / Kocaeli",
+    "aciklama": "Öğrenci indirimi %10.",
     "kategori": ["Yemek"],
     "logo": "/images/belsa-han-sofrasi/98.jpg",
     "gorseller": ["/images/belsa-han-sofrasi/98.jpg"],
-    "konumUrl": "https://www.google.com/maps/search/?api=1&query=Belsa%20Han%20Sofrası%20İzmit"
+    "konumUrl": "https://www.google.com/maps/search/?api=1&query=Belsa+Han+Sofrası+İzmit"
+  },
+
+  /* --- YENİ 6 DÜKKAN --- */
+  {
+    "id": 27,
+    "ad": "Çaymazoğlu Spor",
+    "sehir": "Kocaeli",
+    "adres": "Tepecik mah. Cevdet Hoca Cad. No:3, İzmit",
+    "aciklama": "Tüm ürünlerde %10 indirim.",
+    "kategori": ["Giyim", "Spor Mağazası"],
+    "logo": "/images/caymazoglu-spor/99.jpg",
+    "gorseller": ["/images/caymazoglu-spor/99.jpg", "/images/caymazoglu-spor/100.jpg", "/images/caymazoglu-spor/101.jpg"],
+    "konumUrl": "https://maps.app.goo.gl/hBNbS5oZWipxbqaX9?g_st=iw"
+  },
+  {
+    "id": 28,
+    "ad": "Cici Giyim",
+    "sehir": "Kocaeli",
+    "adres": "Tepecik mah. Cevdet Hoca Caddesi No:7 (Serbestler Dondurma yanı), İzmit",
+    "aciklama": "Öğrenci indirimi %20.",
+    "kategori": ["Giyim"],
+    "logo": "/images/cici-giyim/102.jpg",
+    "gorseller": ["/images/cici-giyim/102.jpg"],
+    "konumUrl": "https://maps.app.goo.gl/LEuycTCnjUYn72rYA?g_st=iw"
+  },
+  {
+    "id": 29,
+    "ad": "TEAS Giyim",
+    "sehir": "Kocaeli",
+    "adres": "Tepecik Mh. Cevdet Hoca Cd. No:5, (Fevziye Camii yanı Halkevi), İzmit/Kocaeli",
+    "aciklama": "Öğrenci indirimi %15.",
+    "kategori": ["Giyim"],
+    "logo": "/images/teas-giyim/103.jpg",
+    "gorseller": ["/images/teas-giyim/103.jpg"],
+    "konumUrl": "https://maps.app.goo.gl/JESmS2vU5asWNNZ66"
+  },
+  {
+    "id": 30,
+    "ad": "Always Waffle (Kuruçeşme)",
+    "sehir": "Kocaeli",
+    "adres": "Yeni, İnkılap Cd. 14/B, 41100 İzmit/Kocaeli",
+    "aciklama": "Gel al %15, paket %10.",
+    "kategori": ["Kafe", "Tatlı"],
+    "logo": "/images/always-waffle/104.jpg",
+    "gorseller": ["/images/always-waffle/104.jpg", "/images/always-waffle/105.jpg"],
+    "konumUrl": "https://maps.app.goo.gl/H8evFS9PSoBypq768?g_st=iwb"
+  },
+  {
+    "id": 31,
+    "ad": "Komagene (İnkılap Şubesi)",
+    "sehir": "Kocaeli",
+    "adres": "Yeni Mh., İnkılap Cd., Işık Apt. No:2B D:G, 41100 İzmit/Kocaeli",
+    "aciklama": "%10 net öğrenci indirimi.",
+    "kategori": ["Yemek", "Fast Food"],
+    "logo": "/images/komagene-inkilap/106.jpg",
+    "gorseller": ["/images/komagene-inkilap/106.jpg"],
+    "konumUrl": "https://maps.app.goo.gl/fGjQEX294zcduzku8?g_st=iw"
+  },
+  {
+    "id": 32,
+    "ad": "Ekleristan (Kuruçeşme)",
+    "sehir": "Kocaeli",
+    "adres": "Yeni, İnkılap Cd. No:42/A, 41100 İzmit/Kocaeli",
+    "aciklama": "Gel al %15, paket %10.",
+    "kategori": ["Pastane", "Tatlı"],
+    "logo": "/images/eklaristan-kurucesme/107.jpg",
+    "gorseller": ["/images/eklaristan-kurucesme/107.jpg", "/images/eklaristan-kurucesme/108.jpg", "/images/eklaristan-kurucesme/109.jpg"],
+    "konumUrl": "https://maps.app.goo.gl/4YG2gtVbsUNcF5qA7?g_st=iwb"
   }
 ]

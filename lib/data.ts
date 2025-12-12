@@ -1,5 +1,4 @@
 // Tipler ve yedek (fallback) veri
-
 export type Firma = {
   id: string;
   ad: string;
@@ -71,7 +70,10 @@ export const DEFAULT_VERI: Firma[] = [
       "https://www.google.com/maps/search/?api=1&query=Bağ+Yolu+Pilav+Serdar+İnkılap+Cd+İzmit",
     kategori: ["Yemek"],
     aciklama: "Öğrenci indirimi: %10.",
-    gorseller: ["/images/bag-yolu-pilav/10.jpeg", "/images/bag-yolu-pilav/11.jpeg"],
+    gorseller: [
+      "/images/bag-yolu-pilav/10.jpeg",
+      "/images/bag-yolu-pilav/11.jpeg",
+    ],
     logo: "/images/bag-yolu-pilav/10.jpeg",
   },
   {
@@ -96,7 +98,8 @@ export const DEFAULT_VERI: Firma[] = [
     id: "art-galeri",
     ad: "Hulda Art Gallery Tattoo & Piercing",
     sehir: "Kocaeli",
-    adres: "Karabaş, İstiklal Cd. No:174 D:301 Kat:3, 41040 İzmit/Kocaeli",
+    adres:
+      "Karabaş, İstiklal Cd. No:174 D:301 Kat:3, 41040 İzmit/Kocaeli",
     konumUrl:
       "https://www.google.com/maps/search/?api=1&query=Hulda+Art+Gallery+Tattoo+%26+Piercing+İzmit",
     kategori: ["Dövme", "Piercing"],
@@ -175,7 +178,8 @@ export const DEFAULT_VERI: Firma[] = [
     id: "mantici",
     ad: "Obur Közde Mantı",
     sehir: "Kocaeli",
-    adres: "Rıza Aygün İşhanı, Tepecik, Kemaliye Cd. No:22-A, 41200 İzmit/Kocaeli",
+    adres:
+      "Rıza Aygün İşhanı, Tepecik, Kemaliye Cd. No:22-A, 41200 İzmit/Kocaeli",
     konumUrl:
       "https://www.google.com/maps/search/?api=1&query=Obur+Közde+Mantı+Kemaliye+Cd+İzmit",
     kategori: ["Yemek"],
@@ -211,12 +215,17 @@ export const DEFAULT_VERI: Firma[] = [
     id: "foto-klinik",
     ad: "Foto Klinik",
     sehir: "Kocaeli",
-    adres: "K1, Ömerağa, Ömerağa Mah., Abdurrahman Yüksel Cd., 41300 İzmit/Kocaeli",
+    adres:
+      "K1, Ömerağa, Ömerağa Mah., Abdurrahman Yüksel Cd., 41300 İzmit/Kocaeli",
     konumUrl:
       "https://www.google.com/maps/search/?api=1&query=Foto+Klinik+Abdurrahman+Yüksel+Cd+İzmit",
     kategori: ["Fotoğrafçı"],
     aciklama: "Öğrenci indirimi: %5.",
-    gorseller: ["/images/foto-klinik/50.jpg", "/images/foto-klinik/51.jpg", "/images/foto-klinik/52.jpg"],
+    gorseller: [
+      "/images/foto-klinik/50.jpg",
+      "/images/foto-klinik/51.jpg",
+      "/images/foto-klinik/52.jpg",
+    ],
     logo: "/images/foto-klinik/50.jpg",
   },
   {
@@ -228,7 +237,12 @@ export const DEFAULT_VERI: Firma[] = [
       "https://www.google.com/maps/search/?api=1&query=Dentizmit+Ağız+ve+Diş+Sağlığı+Karayolu+Cd+İzmit",
     kategori: ["Dişçi"],
     aciklama: "Öğrenci indirimi: %20.",
-    gorseller: ["/images/disci/53.jpg", "/images/disci/54.jpg", "/images/disci/55.jpg", "/images/disci/56.png"],
+    gorseller: [
+      "/images/disci/53.jpg",
+      "/images/disci/54.jpg",
+      "/images/disci/55.jpg",
+      "/images/disci/56.png",
+    ],
     logo: "/images/disci/53.jpg",
   },
   {
@@ -240,7 +254,11 @@ export const DEFAULT_VERI: Firma[] = [
       "https://www.google.com/maps/search/?api=1&query=Efe+Kırtasiye+Hamit+Kaplan+Blv+Körfez",
     kategori: ["Kırtasiye"],
     aciklama: "Öğrenci indirimi: %20.",
-    gorseller: ["/images/efe-kirtasiye/57.jpg", "/images/efe-kirtasiye/58.jpg", "/images/efe-kirtasiye/59.jpg"],
+    gorseller: [
+      "/images/efe-kirtasiye/57.jpg",
+      "/images/efe-kirtasiye/58.jpg",
+      "/images/efe-kirtasiye/59.jpg",
+    ],
     logo: "/images/efe-kirtasiye/57.jpg",
   },
   {
@@ -252,7 +270,11 @@ export const DEFAULT_VERI: Firma[] = [
       "https://www.google.com/maps/search/?api=1&query=AMOR+Aroma+Cafe+İnönü+Cd+İzmit",
     kategori: ["Yemek", "Kafe"],
     aciklama: "Öğrenci indirimi: %20.",
-    gorseller: ["/images/amor/60.jpg", "/images/amor/61.jpg", "/images/amor/62.jpg"],
+    gorseller: [
+      "/images/amor/60.jpg",
+      "/images/amor/61.jpg",
+      "/images/amor/62.jpg",
+    ],
     logo: "/images/amor/60.jpg",
   },
   {
@@ -357,15 +379,14 @@ export const DEFAULT_VERI: Firma[] = [
     logo: "/images/Fade-Hair-Studio/89.jpg",
   },
 
-  /* ---------------- YENİ EKLENEN 5 DÜKKAN ---------------- */
-
+  /* --- YENİ EKLENEN 5 DÜKKAN --- */
   {
     id: "kavurmaci-remzi",
     ad: "Kavurmacı Remzi",
     sehir: "Kocaeli",
     adres: "Kuruçeşme Fatih, İsmail Özen Cd. No:17/A, 41100 İzmit/Kocaeli",
-    konumUrl: "https://maps.app.goo.gl/we86LV759okxLD9y7",
-    kategori: ["Yemek"],
+    konumUrl: "https://maps.app.goo.gl/M1GvwGxUVCPugwiw5",
+    kategori: ["Yemek", "Restoran"],
     aciklama: "Öğrenci indirimi: %10.",
     gorseller: [
       "/images/kavurmaci-remzi/90.jpg",
@@ -379,18 +400,21 @@ export const DEFAULT_VERI: Firma[] = [
     ad: "Sertçetin Kafe",
     sehir: "Kocaeli",
     adres: "Karabaş, 41040 İzmit/Kocaeli",
-    konumUrl: "https://maps.app.goo.gl/HSdKg2VPD1TsqEU7A",
+    konumUrl: "https://maps.app.goo.gl/we86LV759okxLD9y7",
     kategori: ["Kafe"],
     aciklama: "Öğrenci indirimi: %10.",
-    gorseller: ["/images/sert-cetin-cafe/93.jpeg", "/images/sert-cetin-cafe/94.webp"],
+    gorseller: [
+      "/images/sert-cetin-cafe/93.jpeg",
+      "/images/sert-cetin-cafe/94.webp",
+    ],
     logo: "/images/sert-cetin-cafe/93.jpeg",
   },
   {
     id: "blue-white-guzellik-salonu",
-    ad: "Blue White",
+    ad: "Blue White Güzellik Salonu",
     sehir: "Kocaeli",
-    adres: "Kozluk, Orduevi Sk. No:A, 41200 İzmit/Kocaeli",
-    konumUrl: "https://maps.app.goo.gl/fp8PMKhpJEuKFvqG6",
+    adres: "Kozluk, Orduevi Sk. No.: A, 41200 İzmit/Kocaeli",
+    konumUrl: "https://maps.app.goo.gl/HSdKg2VPD1TsqEU7A", // DÜZELTİLDİ
     kategori: ["Güzellik Salonu"],
     aciklama: "Öğrenci indirimi: %30.",
     gorseller: [
@@ -403,10 +427,10 @@ export const DEFAULT_VERI: Firma[] = [
     id: "simay-pismaniye",
     ad: "Simay Pişmaniye",
     sehir: "Kocaeli",
-    adres: "Ömerağa, İstiklal Cd., Saroğlu İş Hanı No:83 Kat:1, İzmit/Kocaeli",
-    konumUrl:
-      "https://www.google.com/maps/search/?api=1&query=Simay+Pişmaniye+İzmit",
-    kategori: ["Tatlı"],
+    adres:
+      "Ömerağa Mah., İstiklal Cd., Saroğlu İş Hanı No:83, Kat:1, İzmit/Kocaeli",
+    konumUrl: "https://maps.app.goo.gl/fp8PMKhpJEuKFvqG6", // DÜZELTİLDİ
+    kategori: ["Tatlı", "Şekerleme"],
     aciklama: "Öğrenci indirimi: %50.",
     gorseller: ["/images/simay-pismaniye/97.jpg"],
     logo: "/images/simay-pismaniye/97.jpg",
@@ -415,12 +439,94 @@ export const DEFAULT_VERI: Firma[] = [
     id: "belsa-han-sofrasi",
     ad: "Belsa Han Sofrası",
     sehir: "Kocaeli",
-    adres: "İzmit/Kocaeli",
+    adres: "İzmit / Kocaeli",
     konumUrl:
       "https://www.google.com/maps/search/?api=1&query=Belsa+Han+Sofrası+İzmit",
     kategori: ["Yemek"],
     aciklama: "Öğrenci indirimi: %10.",
     gorseller: ["/images/belsa-han-sofrasi/98.jpg"],
     logo: "/images/belsa-han-sofrasi/98.jpg",
+  },
+
+  /* --- YENİ EKLENEN 6 DÜKKAN --- */
+  {
+    id: "caymazoglu-spor",
+    ad: "Çaymazoğlu Spor",
+    sehir: "Kocaeli",
+    adres: "Tepecik Mah., Cevdet Hoca Cad. No:3, İzmit",
+    konumUrl: "https://maps.app.goo.gl/hBNbS5oZWipxbqaX9?g_st=iw",
+    kategori: ["Giyim", "Spor Mağazası"],
+    aciklama: "Tüm ürünlerde öğrenci indirimi: %10.",
+    gorseller: [
+      "/images/caymazoglu-spor/99.jpg",
+      "/images/caymazoglu-spor/100.jpg",
+      "/images/caymazoglu-spor/101.jpg",
+    ],
+    logo: "/images/caymazoglu-spor/99.jpg",
+  },
+  {
+    id: "cici-giyim",
+    ad: "Cici Giyim",
+    sehir: "Kocaeli",
+    adres:
+      "Tepecik Mah., Cevdet Hoca Caddesi No:7 (Serbestler Dondurma yanı), İzmit",
+    konumUrl: "https://maps.app.goo.gl/LEuycTCnjUYn72rYA?g_st=iw",
+    kategori: ["Giyim"],
+    aciklama: "Öğrenci indirimi: %20.",
+    gorseller: ["/images/cici-giyim/102.jpg"],
+    logo: "/images/cici-giyim/102.jpg",
+  },
+  {
+    id: "teas-giyim",
+    ad: "TEAS Giyim",
+    sehir: "Kocaeli",
+    adres:
+      "Tepecik Mh. Cevdet Hoca Cd. No:5, (Fevziye Camii yanı Halkevi), İzmit/Kocaeli",
+    konumUrl: "https://maps.app.goo.gl/JESmS2vU5asWNNZ66",
+    kategori: ["Giyim"],
+    aciklama: "Öğrenci indirimi: %15.",
+    gorseller: ["/images/teas-giyim/103.jpg"],
+    logo: "/images/teas-giyim/103.jpg",
+  },
+  {
+    id: "always-waffle-kurucesme",
+    ad: "Always Waffle (Kuruçeşme)",
+    sehir: "Kocaeli",
+    adres: "Yeni, İnkılap Cd. 14/B, 41100 İzmit/Kocaeli",
+    konumUrl: "https://maps.app.goo.gl/H8evFS9PSoBypq768?g_st=iwb",
+    kategori: ["Kafe", "Tatlı"],
+    aciklama: "Gel-al %15 • Paket %10.",
+    gorseller: [
+      "/images/always-waffle/104.jpg",
+      "/images/always-waffle/105.jpg",
+    ],
+    logo: "/images/always-waffle/104.jpg",
+  },
+  {
+    id: "komagene-inkilap",
+    ad: "Komagene (İnkılap Şubesi)",
+    sehir: "Kocaeli",
+    adres:
+      "Yeni Mah., İnkılap Cd., Işık Apt. No:2B D:G, 41100 İzmit/Kocaeli",
+    konumUrl: "https://maps.app.goo.gl/fGjQEX294zcduzku8?g_st=iw",
+    kategori: ["Yemek", "Fast Food"],
+    aciklama: "Öğrenci indirimi: %10 (net).",
+    gorseller: ["/images/komagene-inkilap/106.jpg"],
+    logo: "/images/komagene-inkilap/106.jpg",
+  },
+  {
+    id: "ekleristan-kurucesme",
+    ad: "Ekleristan (Kuruçeşme)",
+    sehir: "Kocaeli",
+    adres: "Yeni, İnkılap Cd. No:42/A, 41100 İzmit/Kocaeli",
+    konumUrl: "https://maps.app.goo.gl/4YG2gtVbsUNcF5qA7?g_st=iwb",
+    kategori: ["Pastane", "Tatlı"],
+    aciklama: "Gel-al %15 • Paket %10.",
+    gorseller: [
+      "/images/eklaristan-kurucesme/107.jpg",
+      "/images/eklaristan-kurucesme/108.jpg",
+      "/images/eklaristan-kurucesme/109.jpg",
+    ],
+    logo: "/images/eklaristan-kurucesme/107.jpg",
   },
 ];
