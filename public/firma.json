@@ -6,8 +6,8 @@
     "adres": "Cumhuriyet, Sulucak Sk. Işın Sitesi No:1/2A, 41100 İzmit/Kocaeli",
     "aciklama": "Çiğ köfte ve atıştırmalıklar. Öğrencilere %10 indirim.",
     "kategori": ["Yemek"],
-    "logo": "/images/komagene-plajyolu/1.jpg",
-    "gorseller": ["/images/komagene-plajyolu/1.jpg"],
+    "logo": "/images/komagane-plajyolu/1.jpg",
+    "gorseller": ["/images/komagane-plajyolu/1.jpg"],
     "konumUrl": "https://www.google.com/maps/search/?api=1&query=Cumhuriyet%2C%20Sulucak%20Sk.%20I%C5%9F%C4%B1n%20Sitesi%20No%3A1%2F2A%2C%2041100%20%C4%B0zmit%2FKocaeli"
   },
   {
@@ -276,7 +276,7 @@
     "id": 24,
     "ad": "Blue White Güzellik Salonu",
     "sehir": "Kocaeli",
-    "adres": "Kozluk, Orduevi Sk. No.: A, 41200 İzmit/Kocaeli",
+    "adres": "Ömerağa Mah., İstiklal Cd., Saroğlu İş Hanı No:83, Kat:1, İzmit/Kocaeli",
     "aciklama": "Güzellik işlemlerinde %30 indirim.",
     "kategori": ["Güzellik Salonu"],
     "logo": "/images/blue-white-guzellik-salonu/95.jpeg",
@@ -287,7 +287,7 @@
     "id": 25,
     "ad": "Simay Pişmaniye",
     "sehir": "Kocaeli",
-    "adres": "Ömerağa Mah., İstiklal Cd., Saroğlu İş Hanı No:83, Kat:1, İzmit/Kocaeli",
+    "adres": "Kozluk, Orduevi Sk. No.: A, 41200 İzmit/Kocaeli",
     "aciklama": "Tüm ürünlerde %50 indirim.",
     "kategori": ["Tatlı", "Şekerleme"],
     "logo": "/images/simay-pismaniye/97.jpg",
@@ -337,7 +337,12 @@
     "aciklama": "Öğrenci indirimi %15.",
     "kategori": ["Giyim"],
     "logo": "/images/teas-giyim/103.jpg",
-    "gorseller": ["/images/teas-giyim/103.jpg"],
+    "gorseller": [
+      "/images/teas-giyim/103.jpg",
+      "/images/teas-giyim/110.jpg",
+      "/images/teas-giyim/111.jpg",
+      "/images/teas-giyim/112.jpg"
+    ],
     "konumUrl": "https://maps.app.goo.gl/JESmS2vU5asWNNZ66"
   },
   {

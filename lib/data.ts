@@ -22,8 +22,8 @@ export const DEFAULT_VERI: Firma[] = [
       "https://www.google.com/maps/search/?api=1&query=Komagene+Plajyolu+Cumhuriyet+Sulucak+Sk+Işın+Sitesi+İzmit",
     kategori: ["Yemek"],
     aciklama: "Öğrenci indirimi: %10.",
-    gorseller: ["/images/komagene-plajyolu/1.jpg"],
-    logo: "/images/komagene-plajyolu/1.jpg",
+    gorseller: ["/images/komagane-plajyolu/1.jpg"],
+    logo: "/images/komagane-plajyolu/1.jpg",
   },
   {
     id: "pike-pet",
@@ -413,7 +413,7 @@ export const DEFAULT_VERI: Firma[] = [
     id: "blue-white-guzellik-salonu",
     ad: "Blue White Güzellik Salonu",
     sehir: "Kocaeli",
-    adres: "Kozluk, Orduevi Sk. No.: A, 41200 İzmit/Kocaeli",
+    adres: "Ömerağa Mah., İstiklal Cd., Saroğlu İş Hanı No:83, Kat:1, İzmit/Kocaeli",
     konumUrl: "https://maps.app.goo.gl/HSdKg2VPD1TsqEU7A", // DÜZELTİLDİ
     kategori: ["Güzellik Salonu"],
     aciklama: "Öğrenci indirimi: %30.",
@@ -428,7 +428,7 @@ export const DEFAULT_VERI: Firma[] = [
     ad: "Simay Pişmaniye",
     sehir: "Kocaeli",
     adres:
-      "Ömerağa Mah., İstiklal Cd., Saroğlu İş Hanı No:83, Kat:1, İzmit/Kocaeli",
+      "Kozluk, Orduevi Sk. No.: A, 41200 İzmit/Kocaeli",
     konumUrl: "https://maps.app.goo.gl/fp8PMKhpJEuKFvqG6", // DÜZELTİLDİ
     kategori: ["Tatlı", "Şekerleme"],
     aciklama: "Öğrenci indirimi: %50.",
@@ -485,7 +485,12 @@ export const DEFAULT_VERI: Firma[] = [
     konumUrl: "https://maps.app.goo.gl/JESmS2vU5asWNNZ66",
     kategori: ["Giyim"],
     aciklama: "Öğrenci indirimi: %15.",
-    gorseller: ["/images/teas-giyim/103.jpg"],
+    gorseller: [
+      "/images/teas-giyim/103.jpg",
+      "/images/teas-giyim/110.jpg",
+      "/images/teas-giyim/111.jpg",
+      "/images/teas-giyim/112.jpg",
+    ],
     logo: "/images/teas-giyim/103.jpg",
   },
   {
